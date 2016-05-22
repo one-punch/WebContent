@@ -1,0 +1,3 @@
+[submodule "WEB-INF/lib"]
+	path = WEB-INF/lib
+	url = git@github.com:one-punch/lib.git
