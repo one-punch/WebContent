@@ -1,0 +1,124 @@
+<script>
+jQuery(document).ready(function(){
+  jQuery(".navul a").each(function(){
+    var original_url=jQuery(this).attr("original_url");
+	if("$!{current_url}".indexOf(original_url)>=0){
+	   jQuery(this).addClass("this");	
+	}
+  });
+  jQuery(".shop_left_btn_con li").mouseover(function(){
+	  var child_count = jQuery(this).attr("child_count");
+	if(child_count>0){
+     var id=jQuery(this).attr("id");
+     jQuery("#child_"+id).show();
+	}
+  }).mouseleave(function(){
+	  var child_count = jQuery(this).attr("child_count");
+	if(child_count>0){
+     var id=jQuery(this).attr("id");
+     jQuery("#child_"+id).hide();
+	}
+  });  
+  jQuery(".navleft").mouseover(function(){
+	  jQuery(this).find(".nav_lefts img").attr("src","$!webPath/resources/style/system/front/default/images/navbottom.gif");
+	  jQuery("#index_menu").show();
+	  });
+  jQuery(".navleft").mouseleave(function(){
+	  jQuery(this).find(".nav_lefts img").attr("src","$!webPath/resources/style/system/front/default/images/navtop.gif");  
+	  jQuery("#index_menu").hide();	  
+		  });	   
+});
+ function all_class(obj){
+   var status=jQuery(obj).attr("status");
+   if(status==1){
+    jQuery(".shop_left_btn_con li").slideDown("fast");
+    jQuery(obj).attr("status",0);
+	jQuery("#class_switch").attr("src","$!webPath/resources/style/system/front/default/images/san2.gif");
+   }else{
+    jQuery(".shop_left_btn_con li").each(function(index){
+	  if(index>9) jQuery(this).slideUp('slow');
+	});
+    jQuery(obj).attr("status",1);
+	jQuery("#class_switch").attr("src","$!webPath/resources/style/system/front/default/images/san.gif"); 
+  }
+ }
+  </script>
+<div class="nav" style="width: 1200px;margin: auto;"> 
+<span class="navright" ></span>
+    <div class="navleft" style="font-size: 16px;">
+    <b class="nav_lefts" style="background-color: #B61D1D;width: 242px;color:#FFFFFF; ">全部商品分类
+    <span><img src="$!webPath/resources/style/system/front/default/images/navtop.gif" width="7" height="4" />
+    </span></b>   
+	<div id="index_menu" style="width: 1200px;margin: auto; position: relative;display: none;">
+		<div class="nav_list_1" style="left: 50%;margin-left: -600px;z-index: 10; position: absolute;top:0px;filter:Alpha(opacity=90);opacity:0.9;background:rgba(255, 255, 255, 0.9)!important;">
+			<div style="height: 502px;border: solid 1px #B61D1D;width: 240px;filter:Alpha(opacity=90);opacity:0.9;background:rgba(255, 255, 255, 0.9)!important;">
+      	       <!-- 菜单案例  START -->
+      	      #set($mnum=0)
+      	      #foreach($gc in $!gcs)
+      	      #if($!mnum < 7)
+              #set($icon_img="$!webPath/resources/style/common/images/icon/default_icon.png")
+				#if($!gc.icon_type==0)
+	                #if($!gc.icon_sys!="")
+	                	#set($icon_img="$!webPath/resources/style/common/images/icon/icon_$!{gc.icon_sys}.png")
+	                #end
+                #else
+	                #if($!gc.icon_acc)
+	                	#set($icon_img="$!webPath/$!gc.icon_acc.path/$!gc.icon_acc.name")
+	                #end
+                #end              
+      	        <div>
+	                <ul class="nav_list_one_1">
+	                      <img src="$!icon_img" width="16px" height="17px">
+	                      <h4><a target="_blank" href="$!webPath/store_goods_list_$!{gc.id}.htm" style="font-size: 16px;font-weight: bold;">$!gc.className</a></h4>
+	                      <div style="clear: both;"></div>
+	                      #set($num=0)
+	                      #foreach($gc1 in $gc.childs)
+	                      		#if($!num < 3)
+		                            #if($!gc1.display)
+		                     			<li style="text-align: left;font-size: 16px;"><a target="_blank" href="$!webPath/store_goods_list_$!{gc1.id}.htm">$!gc1.className</a></li>
+		                     			#set($num=$num+1)
+			                  		#end
+		                  		#end
+                          #end                                                 
+	                      <ul class="erji_1"> 
+	                       #foreach($gc1 in $gc.childs)
+	                            #if($!gc1.display)
+	                           		<li style="width:490px;">
+		                                <ul> 
+		                                	<a target="_blank" href="$!webPath/store_goods_list_$!{gc1.id}.htm"><h3 style="font-size: 16px;color: #B61D1D;"><b>$!gc1.className</b></h3></a>
+				                                	#foreach($gc2 in $gc1.childs)
+					                           			#if($!gc2.display)
+	                                        				<li><a target="_blank" href="$!webPath/store_goods_list_$!{gc2.id}.htm">$!gc2.className</a></li>
+	                                        			#end
+				                           			#end
+		                                </ul>
+	                           		</li>
+                                  #end	
+	                         #end
+	                    </ul>
+	                </ul>
+                </div>
+                #set($mnum=$mnum+1)
+                #end
+             #end
+      	        <!-- 菜单案例  END -->
+			</div>
+               <ul style="background-color: #B61D1D;height: 27px;width: 242px;">
+                	<li><a style="line-height: 27px;color: #FFFFFF;" href="$!webPath/goods_class.htm">全部商品分类</a></li>
+             	</ul>			
+		</div>
+	</div> 
+    </div>
+    <ul class="navul">
+    #set($navs=$!navTools.queryNav(0,-1))
+    #foreach($nav in $navs)
+    #if($!CommUtil.indexOf("$!nav.url","http://")>=0)
+      #set($url="$!nav.url")
+    #else
+      #set($url="$!webPath/$!{nav.url}")
+    #end
+    <li style="font-size: 18px;"><a href="$!url" id="$!nav.id" #if($!nav.new_win==1)target="_blank"#end original_url="$!nav.original_url"><span>$!{nav.title}</span></a></li>
+    #end
+  </ul>   
+  </div>
+  

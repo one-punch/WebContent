@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>XXSHOP商城系统后台登录</title>
+</head>
+<link href="$!webPath/resources/style/system/manage/blue/nlogin.css" rel="stylesheet" type="text/css" />
+<script src="$!webPath/resources/js/jquery-1.6.2.js"></script>
+<style>
+input,img{vertical-align:middle;}
+</style>
+<script>
+function refreshCode(){
+	jQuery("#code_img").attr("src","$!webPath/verify.htm?d"+new Date().getTime());
+}
+function login(){
+	jQuery("#theForm").submit();
+}
+var EnterSubmit = function(evt){
+evt = window.event || evt;
+ if (evt.keyCode == 13)
+ { 
+  login();
+ }
+}
+window.document.onkeydown=EnterSubmit;
+jQuery(document).ready(function(){
+     if(top.location!=this.location)top.location=this.location;//跳出框架在主窗口登录
+	jQuery('#username').focus();	
+});
+</script>
+<body>
+<!--<form name="theForm" id="theForm" action="$!webPath/xxshop_login.htm" method="post">-->
+<section class="container">
+    <div class="login">
+      <h1>XXSHOP管理系统</h1>
+      <form name="theForm" id="theForm" action="$!webPath/xxshop_login.htm" method="post">
+        <p>
+       	  #if($!user)
+			<input name="username" type="hidden" id="username" value="$!user.userName"  maxlength="2048"  placeholder="Username"/>$!user.userName
+		  #else
+            <input name="username" type="text" id="username"  autocomplete="false" maxlength="2048"  placeholder="Username"/>
+		  #end
+       </p>
+        <p>
+        <input name="password" type="password" id="password"  autocomplete="false" maxlength="2048" placeholder="Password"/>
+       </p>
+		<p>
+		<input name="code" type="text" id="code"  style="text-transform:uppercase;width: 154px" autocomplete="false" />
+		<img  src="$!webPath/verify.htm" id="code_img" style="height: 44px" onclick="refreshCode();" />
+		</p>
+        <p class="remember_me">
+          <label>
+            <a href="$!webPath/index.htm" id="return_page" >&lt&lt返回首页
+            </a>
+          </label>
+        </p>
+        <p class="submit">
+        <input type="submit" name="commit" value="登陆" onclick="login();">
+        <input name="login_role" type="hidden" id="login_role" value="admin" />
+        <input type="reset" name="" value="重置" style="cursor:pointer">
+        </p>
+      </form>
+    </div>
+      <section class="about">
+    <p class="about-author">
+      Copyright &copy; 2012&ndash;2013 
+      <a href="http://www.ehaowang.com" target="_blank">XXSHOP</a><br>
+      		北京中华易达科技有限公司
+      </p>
+  	</section>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>$!config.title - Powered by EHaowang</title>
+<meta name="keywords" content="$!config.keywords" />
+<meta name="description" content="$!config.description" />
+<meta name="generator" content="EHaowang" />
+<meta name="author" content="www.ehaowang.com">
+<meta name="copyright" content="中华易达 Inc. All Rights Reserved">
+#if($!config.sina_domain_code)
+$!{config.sina_domain_code}
+#end
+#if($!config.qq_domain_code)
+$!{config.qq_domain_code}
+#end
+<link rel="stylesheet" type="text/css" href="$!webPath/resources/style/system/front/default/css/content.css">
+<link rel="stylesheet" type="text/css" href="$!webPath/resources/style/system/front/default/css/header_and_footer_and_banner_xf.css">
+<link href="$!webPath/resources/style/system/front/default/css/index.css" type="text/css" rel="stylesheet" />
+
+<link href="$!webPath/resources/style/system/front/default/css/nav.css" type="text/css" rel="stylesheet" />
+<link href="$!webPath/resources/style/system/front/default/css/public.css" type="text/css" rel="stylesheet" />
+
+<script src="$!webPath/resources/js/jquery-1.6.2.js"></script>
+<script src="$!webPath/resources/js/index.js"></script>
+<script src="$!webPath/resources/js/xf.js"></script>
+
+<script src="$!webPath/resources/js/jquery.lazyload.js"></script>
+<script src="$!webPath/resources/js/jcarousellite_1.0.1.min.js"></script>
+<script src="$!webPath/resources/js/jquery.KinSlideshow.min.js"></script>
+<script>
+jQuery(document).ready(function(){
+  jQuery(".shop_left_btn_con li").mouseover(function(){
+	var child_count = jQuery(this).attr("child_count");
+	if(child_count>0){
+	 var id=jQuery(this).attr("id");
+     jQuery("#child_"+id).show();			
+	}
+  }).mouseleave(function(){
+	 var child_count = jQuery(this).attr("child_count");
+	if(child_count>0){ 
+     var id=jQuery(this).attr("id");
+     jQuery("#child_"+id).hide();
+	}
+  });
+  jQuery(".specialde li").mouseover(function(){
+     jQuery(this).find("i").show();
+  }).mouseleave(function(){
+     jQuery(this).find("i").hide();
+  });
+  jQuery(".productone ul").mouseover(function(){
+    jQuery(".productone ul").removeClass("this");
+	jQuery(this).addClass("this");
+  }).mouseleave(function(){
+    jQuery(".productone ul").removeClass("this");
+  });
+  jQuery(".floorul li").mouseover(function(){
+	var store_gc=jQuery(this).attr("store_gc");
+    jQuery(".floorul li[store_gc="+store_gc+"]").css("cursor","pointer").removeClass("this");
+	jQuery(this).addClass("this");
+    var id=jQuery(this).attr("id");
+	jQuery(".ftab[store_gc="+store_gc+"]").hide();
+	jQuery(".ftab[store_gc="+store_gc+"][id="+id+"]").show();
+  });
+  jQuery(".productone img").lazyload({effect:"fadeIn",width:147,height:147});
+  jQuery(".rankimg img").lazyload({effect:"fadeIn",width:73,height:73});
+ //
+ jQuery(".index_sales_left>h3>ul>li").mouseover(function(){
+    jQuery(".index_sales_left>h3>ul>li").removeClass("this");
+	jQuery(this).addClass("this");
+	jQuery(".index_sales_box>[class^=index_sales_]").hide();
+	var div_index=jQuery(this).attr("div_index");
+	jQuery(".index_sales_"+div_index).show();
+ });
+ //
+  jQuery(".conti").jCarouselLite({
+	 btnNext: "#advert_left",
+　　  btnPrev: "#advert_right", 
+	 auto: 5000,
+	 speed: 2000,
+	 visible:1
+  });
+  //
+});
+var recommend_goods_random=1;//随机次数
+function switch_recommend_goods(){
+  jQuery.ajax({type:'POST',url:'$!webPath/switch_recommend_goods.htm',data:{"recommend_goods_random":recommend_goods_random},
+			  beforeSend:function(){
+				     jQuery(".limishop_hidden").empty();
+					 jQuery("#store_reommend_goods").html("<div style='width:100%;height:301px;text-align:center;'><img src='$!webPath/resources/style/common/images/loader.gif' style='margin-top:145px;' /></div>");
+				  },
+			  success:function(html){
+	                      jQuery("#store_reommend_goods").html(html);
+	                      recommend_goods_random++;
+	                      if(recommend_goods_random>$!{store_reommend_goods_count}){
+                              recommend_goods_random=1;
+	                       }
+					  }
+			 });
+}
+</script>
+</head>
+<body style="text-align: center;">
+<div style="width: 100%;margin: auto;">
+$!httpInclude.include("/top.htm")
+	<div> 
+		$!httpInclude.include("/head.htm")
+	</div>
+	<div> 
+ 	$!httpInclude.include("/nav.htm")
+  	</div>
+	<div style="width: 1200px;margin: auto; position: relative;">
+		<div class="nav_list_1" style="left: 50%;margin-left: -600px;z-index: 10; position: absolute;top:0px;filter:Alpha(opacity=90);opacity:0.9;background:rgba(255, 255, 255, 0.9)!important;">
+			<div style="height: 502px;border: solid 1px #B61D1D;width: 240px;filter:Alpha(opacity=90);opacity:0.9;background:rgba(255, 255, 255, 0.9)!important;">
+      	       <!-- 菜单案例 START -->
+      	      #set($mnum=0)
+      	      #foreach($gc in $!gcs)
+      	      #if($!mnum < 7)
+              #set($icon_img="$!webPath/resources/style/common/images/icon/xicon.png")
+				#if($!gc.icon_type==0)
+	                #if($!gc.icon_sys!="")
+	                	#set($icon_img="$!webPath/resources/style/common/images/icon/icon_$!{gc.icon_sys}.png")
+	                #end
+                #else
+	                #if($!gc.icon_acc)
+	                	#set($icon_img="$!webPath/$!gc.icon_acc.path/$!gc.icon_acc.name")
+	                #end
+                #end              
+      	        <div>
+	                <ul class="nav_list_one_1">
+	                		<!-- 
+	                      <img src="$!icon_img" width="16px" height="17px">
+	                		 -->
+	                	  <img src="$!webPath/resources/style/common/images/icon/xicon.png" width="16px" height="17px"/>
+	                      <h4><a target="_blank" href="$!webPath/store_goods_list_$!{gc.id}.htm" style="font-size: 16px;font-weight: bold;">$!gc.className</a></h4>
+	                      <div style="clear: both;"></div>
+	                      #set($num=0)
+	                      #foreach($gc1 in $gc.childs)
+	                      		#if($!num < 3)
+		                            #if($!gc1.display)
+		                     			<li style="text-align: left;font-size: 16px;"><a target="_blank" href="$!webPath/store_goods_list_$!{gc1.id}.htm">$!gc1.className</a></li>
+		                     			#set($num=$num+1)
+			                  		#end
+		                  		#end
+                          #end                                                 
+	                      <ul class="erji_1"> 
+	                       #foreach($gc1 in $gc.childs)
+	                            #if($!gc1.display)
+	                           		<li style="width:490px;">
+		                                <ul> 
+		                                	<a target="_blank" href="$!webPath/store_goods_list_$!{gc1.id}.htm"><h3 style="font-size: 16px;color: #B61D1D;"><b>$!gc1.className</b></h3></a>
+				                                	#foreach($gc2 in $gc1.childs)
+					                           			#if($!gc2.display)
+	                                        				<li><a target="_blank" href="$!webPath/store_goods_list_$!{gc2.id}.htm">$!gc2.className</a></li>
+	                                        			#end
+				                           			#end
+		                                </ul>
+	                           		</li>
+                                  #end	
+	                         #end
+	                    </ul>
+	                </ul>
+                </div>
+                #set($mnum=$mnum+1)
+                #end
+             #end
+      	        <!-- 菜单案例 END -->
+			</div>
+               <ul style="background-color: #B61D1D;height: 27px;width: 242px;">
+                	<li><a style="line-height: 27px;color: #FFFFFF;" href="$!webPath/goods_class.htm">全部商品分类</a></li>
+             	</ul>			
+		</div>
+	</div> 
+<div class="lunbo" style="z-index: 5;position: relative;height: 532px;">
+     	       <a href="#"><img src="$!webPath/resources/style/system/front/default/images/acf7bef4-9e64-4a6b-be71-aa6003707d83.jpg"></a>
+     	       <a href="#"><img src="$!webPath/resources/style/system/front/default/images/4b83e0b1-6446-48d8-bbd7-a7abdae0552e.jpg"></a>
+     	       <a href="#"><img src="$!webPath/resources/style/system/front/default/images/b58e74a3-6bfb-4869-97b8-3022d7d6e0ba.jpg"></a>
+     	       <a href="#"><img src="$!webPath/resources/style/system/front/default/images/990f17f1-9d49-410e-8e05-5ef04d3f5ce1.jpg"></a>
+			   <a href="#"><img src="$!webPath/resources/style/system/front/default/images/23676320-7926-43c3-bbdd-48145529b08b.jpg"></a>
+      <div class="lunbo_2">
+            <div class="lunbo_3"></div>
+            <div class="lunbo_3"></div>
+            <div class="lunbo_3"></div>
+            <div class="lunbo_3"></div>
+            <div class="lunbo_3"></div>
+      </div>
+      <div class="left"></div>
+      <div class="right"></div> 
+</div> 	
+<!-- 
+  <div class="index">
+    <div class="indextop"> 
+ -->			
+      <!--所有分类开始-->
+      <!-- 
+      <div class="menuhidden">
+        <div class="index_menu">
+          <div class="shop_left_btn_con">
+            <ul>
+              #foreach($gc in $!gcs)
+              #set($icon_img="$!webPath/resources/style/common/images/icon/default_icon.png")
+              <li id="$!gc.id" style="cursor:pointer;" child_count="$!gc.childs.size()"><span class="d"><i class="d_img"> #if($!gc.icon_type==0)
+                #if($!gc.icon_sys!="")
+                #set($icon_img="$!webPath/resources/style/common/images/icon/icon_$!{gc.icon_sys}.png")
+                #end
+                #else
+                #if($!gc.icon_acc)
+                #set($icon_img="$!webPath/$!gc.icon_acc.path/$!gc.icon_acc.name")
+                #end
+                #end <img src="$!icon_img" width="20" height="18" /> </i><a href="$!webPath/store_goods_list_$!{gc.id}.htm">$!gc.className</a></span>
+                <div class="shop_left_btn_layer" id="child_$!gc.id">
+                  <div class="shop_left_btn_layer_left"><i class="d_img"><img src="$!icon_img" width="20" height="18" /></i><a href="$!webPath/store_goods_list_$!{gc.id}.htm">$!gc.className</a></div>
+                  <div class="shop_left_btn_layer_right"> #foreach($gc1 in $gc.childs)
+                    #if($!gc1.display)
+                    <div class="shop_left_one">
+                      <div class="shop_left_btn_layer_tit"><span><a href="$!webPath/store_goods_list_$!{gc1.id}.htm" target="_blank">$!gc1.className</a></span></div>
+                      <div class="shop_left_btn_layer_con">
+                        <dl>
+                          <dd>#foreach($gc2 in $gc1.childs)#if($!gc2.display)<a href="$!webPath/store_goods_list_$!{gc2.id}.htm" target="_blank">$!gc2.className</a>#end#end
+                            <div class="clear"></div>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                    #end
+                    #end </div>
+                </div>
+              </li>
+              #end
+            </ul>
+          </div>
+          <div class="allclass"><a href="$!webPath/goods_class.htm">全部商品分类</a></div>
+        </div>
+      </div>
+       -->
+      <!--所有分类结束-->
+          <!--  <div class="index_tm">
+            
+        <div class="index_hdp"> 
+          <script src="$!webPath/advert_invoke.htm?id=1"></script> 
+        </div>
+        <div class="shopsep">
+          <h3>商城特别推荐</h3>
+        </div>
+        <div class="index_conti"> 
+          <script src="$!webPath/advert_invoke.htm?id=32768"></script> 
+        </div>
+      </div>
+      <div class="indextop_adv" > 
+        <script src="$!webPath/advert_invoke.htm?id=262148"></script> 
+        <script src="$!webPath/advert_invoke.htm?id=262149"></script> 
+      </div>
+      <div class="index_lnb"> #if(!$!user)
+        <div class="logins"> <span class="logina"><a href="$!webPath/register.htm"><b>免费注册</b></a></span> <span class="loginb "><a href="$!webPath/user/login.htm"><b>登录</b></a></span> <span class="loginc"><a href="$!webPath/seller/store_create_first.htm"><b>免费开店</b></a></span> </div>
+        #else
+        <div class="logined"> <i> #if($!user.photo)
+          #set($img="$!imageWebServer/$!user.photo.path/$!user.photo.name")
+          #else 
+          #set($img="$!imageWebServer/$!config.memberIcon.path/$!config.memberIcon.name")
+          #end <img src="$!img" width="30" height="30" /> </i>
+          <ul>
+            <li>您好<em>$!CommUtil.substring("$!user.userName",10)</em> ><a href="$!webPath/buyer/index.htm"> 进入用户中心</a></li>
+            <li>预存款:<b> ¥#if($!{user.availableBalance})$!{user.availableBalance}#else 0 #end</b> | 积分: <b>$!{user.integral}</b></li>
+          </ul>
+        </div>
+        #end
+        <div class="new">
+          <h3><span><a href="$!webPath/articlelist_news.htm" target="_blank">更多</a></span>商城新闻</h3>
+          <ul>
+            #foreach($article in $articles)
+            #if($!article.url!="")
+            #set($url="$!article.url")
+            #else
+            #set($url="$!webPath/article_$!{article.id}.htm")
+            #end
+            <li><span>$!CommUtil.formatShortDate($!article.addTime)</span><a href="$!url" target="_blank">$!CommUtil.substring("$!article.title",19)</a></li>
+            #end
+          </ul>
+        </div>
+        <div class="group_sales_right">
+          <h3> <a href="$!webPath/group.htm">更多</a> <span><b>团购</b><i>GROUP DEAL</i></span> </h3>
+          #if($group)
+          <ul class="group_deal">
+            <li class="group_deal_img"><span class="img_center">
+              <p><a href="$!webPath/group_view_$!{group.id}.htm" target="_blank"><img src="$!imageWebServer/$!group.gg_img.path/$!group.gg_img.name" width="180" height="180" /></a></p>
+              </span></li>
+            <li class="group_deal_name"><a href="$!webPath/group_view_$!{group.id}.htm" target="_blank">$!group.gg_name</a></li>
+            <li class="group_deal_btn"><span>¥$!{group.gg_goods.goods_price}</span><a href="$!webPath/group_view_$!{group.id}.htm">立即购买</a></li>
+          </ul>
+          #set($buyer_count=$!group.gg_def_count+$!group.gg_vir_count)
+          #set($save_money=$!{group.gg_goods.goods_price}-$!{group.gg_price})
+          <div class="group_deal_price"> <span class="group_price_a"><b>团购价</b><s>¥$!{group.gg_price}</s></span> <span  class="group_price_b"><b>节省</b><i>¥$!{save_money}</i></span> <span  class="group_price_c"><b>已售出</b><i>$!{buyer_count}件</i></span> </div>
+          #end </div>
+      </div>
+    </div>
+    -->
+<!--    <script src="$!webPath/advert_invoke.htm?id=4"></script>-->
+             
+<div class="content" style="text-align: center; width: 1200px;margin: auto;background-color: white;">
+<div style="text-align: center;width: 1210px;margin: auto;margin-top: 30px;">
+    <div class="index_mid" style="width: 1230px;margin: auto;">
+      <div class="limitime">
+        <h3 style="text-align: left;background-color: #B61D1D;border-bottom: solid 1px #B61D1D;color: #FFFFFF;"><a href="javascript:void(0);" onclick="switch_recommend_goods();" style="color: #FFFFFF;">换一组</a><em1 style="color: #FFFFFF;margin-left: 8px;">新品推荐</em1></h3>
+        <div class="limishop" id="store_reommend_goods">
+          <div class="limishop_hidden"> #foreach($!store_reommend_good in $store_reommend_goods)
+            <ul>
+              #if($!store_reommend_good.goods_main_photo)
+              #set($img="$!imageWebServer/$!{store_reommend_good.goods_main_photo.path}/$!{store_reommend_good.goods_main_photo.name}_small.$!{store_reommend_good.goods_main_photo.ext}")
+              #else
+              #set($img="$!imageWebServer/$!{config.goodsImage.path}/$!{config.goodsImage.name}")
+              #end
+              #set($goods_url="$!webPath/goods_$!{store_reommend_good.id}.htm")
+              #if($!config.second_domain_open)
+              #set($goods_url="http://$!{store_reommend_good.goods_store.store_second_domain}.$!{domainPath}/goods_$!{store_reommend_good.id}.htm")
+              #end
+              <li class="limishop_img"><a href="$!goods_url" target="_blank"><span>
+                <p><img src="$!img" width="160" height="160" /></p>
+                </span></a><i class="recommend_new"></i> </li>
+              <li><a href="$!goods_url" target="_blank" class="limihui">$!CommUtil.substring("$!store_reommend_good.goods_name",20)</a></li>
+              <li class="limitmo_ems" style="color: #008D4F;"><em>店铺：
+                #set($store_url="$!webPath/store_$!{store_reommend_good.goods_store.id}.htm")
+                #if($!config.second_domain_open)
+                #set($store_url="http://$!{store_reommend_good.goods_store.store_second_domain}.$!{domainPath}")
+                #end <a href="$!store_url">$!CommUtil.substring("$!{store_reommend_good.goods_store.store_name}",8)</a></em></li>
+              <li class="limitmone"><span><em style="font-size: 14px;">¥</em>$!{store_reommend_good.goods_current_price}<i>¥$!{store_reommend_good.goods_price}</i></span></li>
+<!--              <li class="limitmo_ems"><span><em>所在地：</em><b>$!{store_reommend_good.goods_store.area.parent.areaName}</b></span></li>-->
+            </ul>
+            #end </div>
+        </div>
+      </div>
+      <div class="specialre">
+        <h3 style="text-align: left;background-color: #B61D1D"><span><a href="$!webPath/store_list.htm?type=store" target="_blank">更多</a></span>明星店铺</h3>
+        <div class="specialde">
+          <ul>
+            #foreach($star_store in $!storeViewTools.query_recommend_store(6))
+            #set($store_url="$!webPath/store_$!{star_store.id}.htm")
+            #if($!config.second_domain_open)
+            #set($store_url="http://$!{star_store.store_second_domain}.$!{domainPath}")
+            #end
+            <li><a href="$!store_url" target="_blank">#if($!{star_store.store_logo})<img src="$!imageWebServer/$!{star_store.store_logo.path}/$!{star_store.store_logo.name}" width="74" height="74" />#end<span><i style="display:none;cursor:pointer;">$!{star_store.store_name}</i></span></a></li>
+            #end
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="banner_h_100"><img style="margin-top: 20px;" src="images/tu_25.png" /></div>
+
+<!-- 楼层区 -->
+
+   $!httpInclude.include("/floor.htm") 
+    <script src="$!webPath/advert_invoke.htm?id=5"></script>
+    <div style="clear: both;"></div>
+    <!-- 
+     
+    <div class="friendlink">
+      <h1>合作伙伴</h1>
+      <ul class="linkimg">
+        <li> <a href="http://www.ehaowang.com" target="_blank"><img src="$!imageWebServer/resources/style/common/images/xxshop.jpg" width="92" height="35" /></a></li>
+        #foreach($info in $img_partners)
+        <li> <a href="$!info.url" target="_blank"><img src="$!imageWebServer/$!info.image.path/$!info.image.name" width="92" height="35" /></a></li>
+        #end
+      </ul>
+      <div class="linka"> #foreach($info in $text_partners)<a href="$!info.url" target="_blank">$!info.title</a>#end </div>
+    </div>-->
+    <div class="shopping"> #foreach($ac in $acs)
+      <div class="shopone">
+        <h1>$!ac.className</h1>
+        <ul>
+          #foreach($article in $ac.articles)
+          #if($!article.url!="")
+          #set($url="$!article.url")
+          #else
+          #set($url="$!webPath/article_$!{article.id}.htm")
+          #end
+          <li><a  href="$!url" target="_blank">$!CommUtil.substring("$!article.title",12)</a></li>
+          #end
+        </ul>
+      </div>
+      #end </div>
+  </div>
+  $!httpInclude.include("/footer.htm") 
+</div>
+  
+</body>
+</html>

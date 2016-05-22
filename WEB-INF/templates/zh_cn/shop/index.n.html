@@ -1,0 +1,1268 @@
+<!doctype html><html>    <head><meta charset="utf-8"/><title>$!config.title - Powered by EHaowang</title>        <meta name="keywords" content="$!config.keywords"/><meta name="description" content="$!config.description"/><link href="$!webPath/resources/i/css/public.css" rel="stylesheet"/><link href="$!webPath/resources/i/css/newindex.css" rel="stylesheet"/><link href="$!webPath/resources/i/css/feedBack.css" rel="stylesheet" type="text/css" /><link href="$!webPath/resources/i/css/shopLoginBox.css" rel="stylesheet"/><link href="$!webPath/resources/i/css/side_toolbar.css" rel="stylesheet" type="text/css"><script src="$!webPath/resources/ijs/jquery-1.8.1.js"></script><script>    //手机适配    if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){        try{            if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){                window.location.href= "$!webPath";            }        }catch(e){}    }</script><style>    /*防止IE6顶部固定导航闪动所加样式*/    *html{        background-image:url(other/.com/about:blank);        background-attachment:fixed;    }    .none{display: none;}</style></head><body>    <!-- 活动 START -->	<!-- 顶部文字宣传 -->	<!-- 
+	<div style="height:30px; background:#fff6d7; font:12px/30px arial; color:#666;">
+	    <p style="text-align: center;">
+	        为保证您春节期间您在ZOL商城的购物体验，请在浏览当前页面前，先阅读并知悉<a href="http://help.zol.com/index.php?c=Detail&id=1327" target="_blank">《2016年ZOL商城春节期间放假通知》</a>。
+	    </p>
+	</div>	 -->	<!-- 顶部活动广告 -->
+	<!-- 11-11 活动 -->
+	<div class="top-activity-links" style="display:none;">
+	    <a href="http://1111.zol.com" target="_blank">
+	        <img src="images/banner_1111.gif" width="1200" height="90">
+	    </a>
+	</div>        	<!-- 底部活动广告 -->
+    <div class="doubleEleven" style="display:none;">
+        <div class="activity-entry" style="left:-138px;"></div>
+        <div class="activity-suck-bottom">
+            <div class="inner">
+                <a href="http://1111.zol.com" target="_blank" class="links">放肆购</a>
+                <a href="javascript:;" class="close"></a>
+                <span class="qr-code"> 
+                    <img width="90" height="90" src="images/ercode.png" alt="">
+                </span>            </div>        </div>    </div>    <!-- 活动 END -->
+    <!-- 公共头部 -->	<!-- 顶部，可单独抽取出来  START -->	<!-- 
+    <link type="text/css" rel="stylesheet" href="http://www.zol.com/css/Index/topbar.css"/>    <div class="zc-topbar">    <div class="wrapper clearfix">        <div class="zc-login-info">            <span class="zc-back-home"><a href="http://www.zol.com">商城首页</a></span>                                         <span class="zc-login">Hi~欢迎来到ZOL商城，请<a href="https://login.zol.com/">登录</a></span>                <span class="zc-register"><a href="https://login.zol.com/index.php?c=Default&amp;a=Register">免费注册</a></span>                    </div>        <ul class="zc-quick-menu">            <li><a href="http://my.zol.com/index.php?c=OrderManage">我的订单</a></li>            <li onmouseout="hideUI(this)" onmouseover="showUI(this)" class="zc-my-center">                <a class="zc-hd" href="http://my.zol.com/">买家中心<i class="ico"></i></a>                <div style="display: none;" id="zc-my-center-bd" class="zc-my-center-bd">                    <a style="display:none;" href="#">我的优惠券&nbsp;&nbsp;<em>8</em></a>                    <a href="http://my.zol.com/index.php?c=FollowMerchant">关注的店铺&nbsp;&nbsp;<em id="focusShopNum">29</em></a>                    <a href="http://my.zol.com/index.php?c=FollowGoods">关注的商品&nbsp;&nbsp;<em id="focusGoodsNum">46</em></a>                </div>            </li>            <li><a id="shop-cart-num" href="http://order.zol.com/index.php?c=Cart">购物车0件</a></li>            <li><a href="http://help.zol.com/">帮助中心</a></li>            <li class="zc-separator">|</li>            <li onmouseout="hideUI(this)" onmouseover="showUI(this)" class="zc-mobile">                <a class="zc-hd zc-mobile-hd" href="javascript:;">手机商城<i class="ico"></i></a>                <div style="display: none;" id="zc-mobile-bd" class="zc-mobile-bd"><img width="130" height="130" src="http://icon.zol-img.com.cn/zol_shop_logo/shop_wechat.png"></div>            </li>            <li><a href="http://www.zol.com.cn">中关村在线</a></li>            <li><a href="http://zs.zol.com/">商家入驻</a></li>            <li class="lianxikefu">                <a class="zc-hd" onmouseout="hideUI(this)" onmouseover="showUI(this)" href="javascript:;">联系客服<i class="ico"></i></a>                <div class="zc-service-tel">400-678-0068</div>            </li>        </ul>    </div></div>    <script>    var Z_now_time = "1454038756";    var z_user_id = "";    function showUI(obj) {        var className = obj.className;        if (className == "zc-my-center") {            obj.className = "zc-my-center zc-hover";            document.getElementById("zc-my-center-bd").style.display = "block";        } else if (className == "zc-mobile") {            obj.className = "zc-mobile zc-hover";            document.getElementById("zc-mobile-bd").style.display = "block";        } else {            obj.parentNode.className = "lianxikefu zc-hover";            obj.nextSibling.style.display = "block";        }    }    function hideUI(obj) {        var className = obj.className;        if (className == "zc-my-center zc-hover") {            obj.className = "zc-my-center";            document.getElementById("zc-my-center-bd").style.display = "none";        } else if (className == "zc-mobile zc-hover") {            obj.className = "zc-mobile";            document.getElementById("zc-mobile-bd").style.display = "none";        } else {            obj.parentNode.className = "lianxikefu";            obj.nextSibling.style.display = "none";        }    }    function getApiNumber() {        if (typeof jQuery == "undefined") {            return false;        } else {            var url = "http://www.zol.com/index.php?c=Ajax_Topbar&amp;callback=?&amp;t=" + Math.random();            $.getJSON(url, function (data) {                if (data) {                    document.getElementById("shop-cart-num").innerHTML = "购物车" + data.cartNumber + "件";                    document.getElementById("focusShopNum").innerHTML = data.shopNumber;                    document.getElementById("focusGoodsNum").innerHTML = data.goodsNumber;                }            });        }    }    getApiNumber();//    function getApiNumber() {//        var xmlHttp = null;//        if (window.XMLHttpRequest) {//            xmlHttp = new XMLHttpRequest();//        } else {//            if (window.ActiveXObject) {//                xmlHttp = new ActiveXObject("Microsoft.XMLHttp");//            }//        }//        var url = "http://www.zol.com/index.php?c=Ajax_Topbar&amp;t=" + Math.random();//        xmlHttp.open("GET", url, false);//        xmlHttp.send(null);//        var responseHtml = "";//        if (xmlHttp.readyState == 4) {//            if (xmlHttp.status = 200) {//                responseHtml = eval(" ( " + xmlHttp.responseText + " ) ");//            }//        }//        if ("" != responseHtml &amp;&amp; "object" == typeof (responseHtml)) {//            document.getElementById("shop-cart-num").innerHTML = "购物车" + responseHtml.cartNumber + "件";//            document.getElementById("focusShopNum").innerHTML = responseHtml.shopNumber;//            document.getElementById("focusGoodsNum").innerHTML = responseHtml.goodsNumber;//        }//    }//    getApiNumber();</script>     -->    <!-- 顶部  END -->	<!-- LOGO/搜索/导航/轮播 START -->
+    <div style="background:url(http://icon.zol-img.com.cn/newshop/shop/index/16newyearbg.jpg) top center no-repeat;">
+        <div class="header clearfix">	
+            <div class="logo">
+                <h1><a title="ZOL商城" href="http://go.zol.com/topic/5637520.html" class="mall-logo"></a></h1>
+                <p>中关村在线旗下网上商城</p>
+            </div>    			<!-- 搜索框 -->
+            <div class="search-box">
+                <form action="other/index.php" method="get">
+                    <input type="hidden" name="c" value="List">
+                    <div class="search">
+                        <input name="keyword" type="text" class="search-text" autocomplete="off" value="">
+                        <input type="submit" value="搜 索" class="search-btn" hidefocus="true">
+                    </div>
+                </form>				<!-- 搜索关键字 -->
+             	<div class="hot-search" id="noresearch_keyword">                    <a href="other/index.php?c=List&keyword=iPhone%2B6s" target="_blank" title="iPhone 6s">iPhone 6s</a>                    <a href="other/index.php?c=List&keyword=%F7%C8%C0%B6metal" target="_blank" title="魅蓝metal">魅蓝metal</a>                    <a href="other/index.php?c=List&keyword=%C0%D6%CA%D31S" target="_blank" title="乐视1S">乐视1S</a>                    <a href="other/index.php?c=List&keyword=iPhone6" target="_blank" title="iPhone6">iPhone6</a>                    <a href="other/index.php?c=List&keyword=%C8%FD%D0%C7A8000" target="_blank" title="三星A8000">三星A8000</a>           		</div>                </div>    
+                            <div class="ad-div"><a href="http://go.zol.com/topic/5062097.html" target="_blank">
+                        <img width="180" height="60" src="images/ChMkJlYcpziIdMcxAAB2sdYBFdcAADnzQKpVyIAAHbJ372.jpg" alt="ZOL商城承诺"></a>
+                </div>
+                    </div>
+		<!-- 导航DIV 纵向导航和横向导航 -->
+        <div class="nav-box">			<!-- 纵向导航 -->
+            <div class="category-nav-container">
+                <h2 class="category-nav-title">商品分类</h2>
+                                    <div class="category-menu-nav">
+                        <ul class="menu-nav-container">
+                                    <li rel="1" id="subCateKey1">
+                                    <div class="item">
+                                        <i class="iconfont iconfont-phone">&#xe600;</i>
+                                        <a href="http://shouji.zol.com/?spm=625.34430" target="_blank">手机通讯</a>
+                                         /<a href="http://www.zol.com/list/c1000.html?spm=625.34265" target="_blank">手机配件</a>                                    </div>                                									<!-- 菜单内详细子菜单 -->
+                                    <div class="category-menu-content category-1">							
+                                        <dl class="service">
+                                            <dt><a href="http://go.zol.com/topic/5062097.html" target="_blank">服务保障</a></dt>
+                                            <dd class="clearfix"><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe609;</i>行货保证</a><a href="#"><i class="iconfont">&#xe60b;</i>发票保障</a><!--<a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe614;</i>48小时发货</a>--><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe60e;</i>顺丰包邮</a><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe60d;</i>无忧退换</a><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe60a;</i>先行赔付</a></dd>
+                                        </dl> 
+                                            <dl >
+                                                <dt><a href="http://www.zol.com/list/c1000.html?spm=625.34265" target="_blank">手机配件</a></dt>
+                                                <dd>
+                                                    <p>                                                         <a href="other/index.php?c=List&keyword=%B3%E4%B5%E7%C6%F7&do_search=%CB%D1%CB%F7&zp-search-type=1&spm=635.34326" target="_blank">充电器</a>
+                                                         |<a href="other/index.php?c=List&keyword=%B6%FA%BB%FA&do_search=%CB%D1%CB%F7&zp-search-type=1&spm=635.34322" target="_blank">耳机</a>
+                                                         |<a href="other/index.php?c=List&str=c34_s731&keyword=保护套&spm=635.34319" target="_blank">保护套</a>
+                                                         |<a href="other/index.php?c=List&keyword=%D2%C6%B6%AF%B5%E7%D4%B4&do_search=%CB%D1%CB%F7&zp-search-type=1&spm=635.34318" target="_blank">移动电源</a>
+                                                     </p>    						
+                                                    <p>                                                     </p>                                                                                                                   </dd>                                            </dl>                                        </div>                                </li>
+                                 	<li rel="2" id="subCateKey2">
+                                    <div class="item">
+                                        <i class="iconfont iconfont-nb">&#xe601;</i>
+                                                                                    <a href="http://www.zol.com/notebook/list/c64_s16.html?spm=626.34267" target="_blank">笔记本</a>
+                                                                                    /<a href="http://www.zol.com/mid/list/c69_s702.html?spm=626.34266" target="_blank">平板</a>
+                                                                                    /<a href="http://www.zol.com/desktop_pc/list/c2_s27.html?spm=626.34118" target="_blank">品牌整机</a>
+                                                                                                                                 
+                                    </div>                                
+                                    <div class="category-menu-content category-2">
+                                        <dl class="service">
+                                            <dt><a href="http://go.zol.com/topic/5062097.html" target="_blank">服务保障</a></dt>
+                                            <dd class="clearfix"><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe609;</i>行货保证</a><a href="#"><i class="iconfont">&#xe60b;</i>发票保障</a><!--<a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe614;</i>48小时发货</a>--><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe60e;</i>顺丰包邮</a><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe60d;</i>无忧退换</a><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe60a;</i>先行赔付</a></dd>
+                                        </dl>                                         <dl >                                                <dt><a href="http://www.zol.com/desktop_pc/list/c2_s27.html?spm=626.34118" target="_blank">品牌整机</a></dt>                                                <dd>                                                    <p>	                                                       <a href="other/index.php?c=List&keyword=%D2%BB%CC%E5%B5%E7%C4%D4&do_search=%CB%D1%CB%F7&zp-search-type=1&spm=639.34353" target="_blank">一体机</a>	
+	                                                       |<a href="http://www.zol.com/desktop_pc/list/s27_pms4368.html?spm=639.34352" target="_blank">商务整机</a>	
+	                                                       |<a href="other/index.php?c=List&str=s27_pms4367&keyword=%CC%A8%CA%BD%BB%FA&spm=639.34351" target="_blank">家用整机</a>                                                    </p>    						                                                    <p>                                                    	  <a href="other/index.php?c=List&str=c2_s27&keyword=%BB%DD%C6%D5&spm=669.34456" target="_blank">惠普</a>
+                                                    	  |<a href="other/index.php?c=List&str=c2_s27&keyword=%C9%F1%D6%DB&spm=669.34455" target="_blank">神舟</a>
+                                                          |<a href="other/index.php?c=List&str=c2_s641&keyword=%C6%BB%B9%FB&spm=669.34454" target="_blank">苹果</a>
+                                                          |<a href="other/index.php?c=List&str=c2_s27&keyword=%BA%EA%B3%9E&spm=669.34453" target="_blank">宏碁</a>
+                                                          |<a href="other/index.php?c=List&str=c2_s27&keyword=%BB%AA%CB%B6&spm=669.34452" target="_blank">华硕</a>
+                                                          |<a href="other/index.php?c=List&str=c2_s27&keyword=%B4%F7%B6%FB&spm=669.34451" target="_blank">戴尔</a>
+                                                          |<a href="other/index.php?c=List&str=c2_s27&keyword=%C1%AA%CF%EB&spm=669.34450" target="_blank">联想</a>
+                                                    </p>                                                                   
+                                                </dd>                                            </dl>                                                                               </div>
+
+                                </li>
+                        </ul>
+
+                    </div>                				<!-- 纵向导航底部特惠 -->
+	          <div class="ad-div">	          		<a href="http://tuan.zol.com/index.php?c=List&a=TodayTuan&cateId=1&subId=1" target="_blank">	          			<img width="200" height="70" src="images/ChMkJ1Z7xxmIJIRaAAAVx_5H8MsAAGjZwDgKK0AABXf118.gif" alt="特惠限时抢">	          		</a>	          </div>         </div>		<!-- 横向导航 -->
+        <ul class="nav clearfix">             <li class="current"><a href="http://www.zol.com/" target="_blank">首页</a></li>             <li ><a href="http://tuan.zol.com/" target="_blank">Z团</a></li>             <li ><a href="http://shouji.zol.com/" target="_blank">手机馆</a></li>             <li ><a href="http://diy.zol.com/" target="_blank">DIY攒机馆</a></li>             <li ><a href="http://qiang.zol.com/" target="_blank">限时抢购</a></li>             <li ><a href="http://zc.zol.com" target="_blank">众筹</a></li>         </ul>		 <!-- 广告消息 -->	
+        <div class="nav-tips"><a href="http://help.zol.com/index.php?c=Detail&id=1327" target="_blank">ZOL商城2016年春节放假通知</a></div>		<!-- 隐藏左右图片 -->
+        <div class="activity-bb-11" style="display:none;">			<span class="left"></span>	
+			<span class="right"></span>        </div>      </div>
+        <!-- //公共头部 -->        <!--横向导航右下和中间轮播 -->        <div class="wrapper clearfix">            <div class="side">                <div class="module mall-notice">                    <div class="module-title">商城公告</div>                    <ul>	                      <li><a href="http://gsxt.saic.gov.cn" target="_blank">[通知]2015商户年度征信开始</a></li>	                      <li><a href="http://go.zol.com/topic/5614884.html" target="_blank">[活动]2016无线购物节 19元起</a></li>	                      <li><a href="http://go.zol.com/topic/5604112.html" target="_blank">[活动]小熊电器嘉年华 满减任性购</a></li>	                      <li><a href="http://go.zol.com/topic/5593234.html" target="_blank">[指导]年终笔记本淘攻略</a></li>	                      <li><a href="http://go.zol.com/topic/5585727.html" target="_blank">[活动]年底手机钜惠 不服来战</a></li>                   	</ul>                </div>                <div class="module phone-recharge">                    <div class="module-title">流量充值</div>                    <iframe width="240" height="156" frameborder="0" scrolling="no" src="http://www.baidu.com"> </iframe>                </div>            </div>                        <!-- 轮播页面 START -->            <div class="focus-box">                    <div class="focus-inner">                        <ul id="indexFocusUl">                          <li>                          		<a href="http://go.zol.com/topic/5637520.html" target="_blank">                              		<img width="740" height="400" src="images/ChMkJladjwiIfEHkAAIQ93DT29QAAHbNACWHekAAhEP159.jpg" alt="年货狂欢">								</a>                         </li>                         <li>								<a href="http://tuan.zol.com/22945.html" target="_blank">									<img width="740" height="400" src="images/ChMkJ1almeaIcs7DAAG2sCmIqU8AAHoqgCvwq0AAbbI468.jpg" alt="ZUK手机Z爆款">								</a>						 </li>						 <li>                                 <a href="http://go.zol.com/topic/5652156.html" target="_blank">                                     <img width="740" height="400" src="images/ChMkJ1ah2u-ITpLgAAJJqHCwL1YAAHjiQDXG9kAAknA903.jpg" alt="精品指南">                                 </a>                         </li>                        </ul>                    </div>                    <a href="javascript:void(0)" class="focus-prev-btn" rel="1" type="prev" page="0" number="6" id="indexFocusPrev"><span><i></i></span></a>                    <a href="javascript:void(0)" class="focus-next-btn" rel="1" type="next" page="0" number="6" id="indexFocusNext"><span><i></i></span></a>                    <div class="focus-switch" id="indexFocusSpan" rel="1">                                <span class="current" rel="0">1</span>                                <span  rel="1">2</span>                                <span  rel="2">3</span>                    </div>                </div>            <!-- 轮播页面 END -->     	 </div>
+     </div>    <!-- LOGO/搜索/导航/轮播 END -->	<!-- 商品展示区 START -->
+	<div class="wrapper">       	<div class="section ztuan-section">			<div class="section-title clearfix">	        	<h2 class="title">Z团</h2>	            <p class="more"><a href="http://tuan.zol.com" target="_blank">更多团购<span>&gt;</span></a></p>			</div>			<div class="z-tuan-list">	                    <ul class="clearfix">	                        <li ><a href="http://tuan.zol.com/22945.html" target="_blank"><img src="images/ChMkJlam0n-ISQKlAAGBMaNq9Y8AAHqcQExpzcAAYFJ416.png" width="300" height="180"></a><i class="border"></i></li>	                        <li ><a href="http://tuan.zol.com/22942.html" target="_blank"><img src="images/ChMkJlalnL6IMbUtAAFZJ3NIYhEAAHorwM5RJMAAVk_206.jpg" width="300" height="180"></a><i class="border"></i></li>	                        <li ><a href="http://tuan.zol.com/22812.html" target="_blank"><img src="images/ChMkJ1alnD2IVCXkAACkm4maMaYAAHorwHjqWoAAKSz896.jpg" width="300" height="180"></a><i class="border"></i></li>	                        <li ><a href="http://tuan.zol.com/22734.html" target="_blank"><img src="images/ChMkJ1agqO2IFoPjAAEgQyBv2NgAAHhugG3RfsAASBb506.png" width="300" height="180"></a><i class="border"></i></li>	                 	</ul>			</div>   		</div>		<!-- 楼层 1 START -->
+       <div class="section mobile-section">        	<div class="section-title clearfix">            	<h2 class="title">1F 手机通讯</h2>            	<!-- 子类型 -->				<p class="more">                       <a href="other/index.php?c=List&merchantId=&zp-search-type=1&keyword=%F7%C8%C0%B6note2&shop=%CB%D1%C9%CC%B3%C7" target="_blank">魅蓝note2</a>                       |<a href="other/index.php?c=List&keyword=%BB%AA%CE%AA%C8%D9%D2%AB6+Plus&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank">华为荣耀6 Plus</a>                       |<a href="other/index.php?c=List&keyword=%C5%AC%B1%C8%D1%C7Z9" target="_blank">努比亚Z9</a>                       |<a href="other/index.php?c=List&keyword=%F7%C8%C0%B6note&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank">魅蓝note</a>
+               	</p>            </div>			<!-- 楼层右边商品信息 START -->
+            <div class="clearfix">				<div class=" main-figure">					<a href="http://shouji.zol.com/" title="手机馆" target="_blank">						<img width="360" height="420" src="images/ChMkJ1aXd9mIeP4XAAEOr8RtbykAAHS7APUYMoAAQ7H027.jpg" alt="手机馆">					</a>				</div>            	<ul class="figure-list clearfix">	                <li class="item wide">	                     <div class="focus-box">	                      	<div class="focus-inner">	                           	<ul id="mobileFocusUl">                                                            									<li><a href="http://www.zol.com/detail/cell_phone/xiaomi/26395069.html" target="_blank"><img width="419" height="209" src="images/ChMkJ1aA8JmISJbDAAD6zOZRGHMAAGqbAPlhNsAAPrk410.jpg" alt="小米 红米Note3"></a></li>									<li><a href="other/index.php?c=List&keyword=iphone+5s" target="_blank"><img width="419" height="209" src="images/ChMkJ1Z7yCKIMYnSAAGxjv1lgGoAAGjaAK62QwAAbGm674.jpg" alt="iphone 5S"></a></li>									<li><a href="http://www.zol.com/detail/cell_phone/vivo/26061241.html" target="_blank"><img width="419" height="209" src="images/ChMkJ1ZWz4yIYJsDAAEOLYMH1XcAAFYFwMJwyoAAQ5F336.jpg" alt="vivo X5Pro双4G手机"></a></li>								</ul>	                         </div>	                         <a href="javascript:void(0)" class="focus-prev-btn" rel="2" type="prev" page="0" number="3" id="mobileFocusPrev"><span><i></i></span></a>	                         <a href="javascript:void(0)" class="focus-next-btn" rel="2" type="next" page="0" number="3" id="mobileFocusNext"><span><i></i></span></a>                                            													 <div class="focus-switch" id="mobileFocusSpan" rel="2">								<span rel="0" class="current"></span>								<span rel="1" ></span>								<span rel="2" ></span>							 </div>						</div>					</li>					<li class="item tall">	                   	<div class="title"><a href="other/index.php?c=List&keyword=%C0%D6%CA%D31s" target="_blank">乐视手机1S （双4G）</a></div>	                    <p>顺丰现货 赠品多多</p>	                    <a href="other/index.php?c=List&keyword=%C0%D6%CA%D31s" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJ1aA86qISZw8AABo5DISa6AAAGqdQFkQloAAGj8744.jpg" alt="乐视手机1S （双4G）"></a>	                </li>                                					<li class="item tall">						<div class="title"><a href="other/index.php?c=List&keyword=vivo+X6" target="_blank">vivo X6 D 现货促销中</a></div>	                    <p>小编推荐</p>	                    <a href="other/index.php?c=List&keyword=vivo+X6" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJlZxAeqIW-f6AAD4PalUYwUAAGOTQA0LbkAAPhV638.png" alt="vivo X6 D 现货促销中"></a>	              	</li>                                					<li class="item ">	                	<div class="title"><a href="http://www.zol.com/detail/cell_phone/huawei/26066018.html" target="_blank">华为 荣耀畅玩5X 指纹识别</a></div>	                    <p>多型号可选 下单赠礼</p>	                    <a href="http://www.zol.com/detail/cell_phone/huawei/26066018.html" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJ1ZpY3mIdls6AAEr6mX1SAAAAF_tAOcmxUAASwC520.png" alt="华为 荣耀畅玩5X 指纹识别"></a>	                </li>                                					<li class="item ">						<div class="title"><a href="other/index.php?c=List&keyword=%F7%C8%C0%B6metal" target="_blank">魅蓝metal 时尚金属机身</a></div>						<p>新品现货，赠高清贴膜</p>						<a href="other/index.php?c=List&keyword=%F7%C8%C0%B6metal" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJlZpYqCIdAfaAAFte-JtBsUAAF_sgCxEGMAAW2T059.png" alt="魅蓝metal 时尚金属机身"></a>					</li>                                					<li class="item ">						<div class="title"><a href="http://www.zol.com/detail/cell_phone/samsung/25933981.html" target="_blank">GALAXY Note 5 三网通</a></div>						<p>生动大屏，赠品丰富</p>						<a href="http://www.zol.com/detail/cell_phone/samsung/25933981.html" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJ1ZeTWGIFafcAAEUIJBzDnAAAFmAgFww1YAARQ4476.png" alt="GALAXY Note 5 三网通"></a>	                </li>                                					<li class="item ">						<div class="title"><a href="http://www.zol.com/detail/cell_phone/huawei/26328091.html" target="_blank">华为 Mate8 性能不错</a></div>	                    <p>大屏 现货发售</p>						<a href="http://www.zol.com/detail/cell_phone/huawei/26328091.html" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJ1ZpcV-ICzDIAAEdM8-T6yoAAF_2gIE8tIAAR1L517.png" alt="华为 Mate8 性能不错"></a>					</li>                                	            </ul>	       </div>	       <!-- 楼层右边商品信息 END -->	       <!-- 品牌列表 START -->           <ul class="brands-list clearfix">                 <li><a href="other/index.php?c=List&keyword=htc&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WVV3pciITvoiAABAXy3qa3AAAE9ywLG1NgAAEB3279.jpg" alt="htc"></a></li>                 <li><a href="other/index.php?c=List&keyword=oppo&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WlV3pSeIc0HGAABIByqUlzkAAE9yQB4uHEAAEgf223.jpg" alt="OPPO"></a></li>                 <li><a href="other/index.php?c=List&Z_search_type=1&keyword=vivo&do_search=%CC%E1%BD%BB" target="_blank"><img width="118" height="60" src="images/Cg-4WVV3pXeIDWEZAABH7lBGGJ0AAE9ygIc-tgAAEgG964.jpg" alt="vivo"></a></li>                 <li><a href="other/index.php?c=List&keyword=%BF%E1%C5%C9&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WVV2uCSIHgvRAABGckzwWOIAAE6LgMYL3kAAEaK168.jpg" alt="酷派"></a></li>                 <li><a href="other/index.php?c=List&keyword=%F7%C8%D7%E5&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/ChMkJlYu4C-INDScAAAVM43PIkoAAEJngJFmUQAABVL801.jpg" alt="魅族"></a></li>                 <li><a href="other/index.php?c=List&str=c34_s57&keyword=%CB%F7%C4%E1" target="_blank"><img width="118" height="60" src="images/Cg-4WlV2tT6IZu9-AAA3LKRFbDMAAE6IQDm5DMAADdE002.jpg" alt="索尼"></a></li>                 <li><a href="other/index.php?c=List&keyword=%C8%FD%D0%C7&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WVV2romIZ-DsAABF1x5kAN0AAE6AwKmvG0AAEXv142.jpg" alt="三星"></a></li>                 <li><a href="other/index.php?c=List&keyword=iPhone&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WVV2sVaIKmm3AAA1Ltrzx_8AAE6DwPV05UAADVG749.jpg" alt="苹果"></a></li>                 <li><a href="other/index.php?c=List&keyword=%BB%AA%CE%AA&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WVV2rcaIUXYjAABB1hgbjlEAAE6AAJtPIkAAEHu751.jpg" alt="华为"></a></li>                 <li><a href="other/index.php?c=List&str=c34_s57&keyword=%C1%AA%CF%EB" target="_blank"><img width="118" height="60" src="images/Cg-4WVV20p6IE6brAAAU7NOFKBIAAE6mANtXc0AABUE611.jpg" alt="联想"></a></li>       		</ul>                    			<!-- 品牌列表 END -->
+            <!-- 楼层下广告图片START -->			<div class="ad-div" style="display:none;">				<a href="http://city.zol.com/3dbox/index.html" target="_blank">				<img width="1200" height="90" src="images/ChMkJlZ87w-IbXkLAACj-yLBnTUAAGlDgJuNVAAAKQT540.jpg" alt="3DBOX">				</a>			</div>			<!-- 楼层下广告图片END -->
+		</div>			<!-- 楼层 2 START -->		<div class="section nb-section">			<div class="section-title clearfix">	            <h2 class="title">2F 电脑数码/配件</h2>	           	<p class="more">					<a href="other/index.php?c=List&keyword=iPad&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank">iPad</a>					|<a href="other/index.php?c=List&keyword=%C1%AA%CF%EBY50&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank">联想Y50</a>					|<a href="other/index.php?c=List&keyword=%C4%E1%BF%B5D750&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank">尼康D750</a>					|<a href="other/index.php?c=List&keyword=%BC%D1%C4%DC70D&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank">佳能70D</a>				</p>           </div>
+		   <div class="clearfix">							<div class=" main-figure">					<a href="other/index.php?c=List&keyword=GP62" title="微星" target="_blank">						<img width="360" height="420" src="images/ChMkJlalnW2IRhoEAACR0sZhNiAAAHosQBpGOcAAJHq986.jpg" alt="微星">					</a>				</div>                <ul class="figure-list clearfix">                  	<li class="item wide">						<div class="focus-box">                        	<div class="focus-inner">                            	<ul id="computerFocusUl">                                                                                                                									<li><a href="other/index.php?c=List&keyword=D7000" target="_blank"><img width="419" height="209" src="images/ChMkJ1ae8-yIPI1fAAChec766XgAAHeWwNRjhQAAKGR011.jpg" alt="尼康D7000"></a></li>									<li><a href="other/index.php?c=List&keyword=X80HD" target="_blank"><img width="419" height="209" src="images/ChMkJlae8iCIF9I5AACoN_bkCiEAAHeWABnoAUAAKhP490.jpg" alt="台电 X80HD双系统"></a></li>									<li><a href="other/index.php?c=List&keyword=+ZenPad+8.0" target="_blank"><img width="419" height="209" src="images/ChMkJ1ae8WOIHsp8AACiC0E5VuMAAHeVgCXXawAAKIj054.jpg" alt="华硕 ZenPad 8.0"></a></li>                              	</ul>                                         </div>                             <a href="javascript:void(0)" class="focus-prev-btn" rel="3" type="prev" page="0" number="3" id="computerFocusPrev"><span><i></i></span></a>                             <a href="javascript:void(0)" class="focus-next-btn" rel="3" type="next" page="0" number="3" id="computerFocusNext"><span><i></i></span></a>                                            						                             <div class="focus-switch" rel="3" id="computerFocusSpan">								<span rel="0" class="current"></span>								<span rel="1" ></span>								<span rel="2" ></span>                             </div>                        </div>					</li>					<li class="item tall">                    	<div class="title"><a href="other/index.php?c=List&keyword=%B0%B5%D3%B0%BE%AB%C1%E9" target="_blank">惠普 暗影精灵</a></div>						<p>这本让你和咸鱼有区别</p>						<a href="other/index.php?c=List&keyword=%B0%B5%D3%B0%BE%AB%C1%E9" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJlaXD8uIOd2DAACipQG7ohkAAHSHgKQoPwAAKK9683.jpg" alt="惠普 暗影精灵"></a>					</li>                                					<li class="item tall">						<div class="title"><a href="other/index.php?c=List&keyword=500R5H-Y06" target="_blank">三星 500R5H-Y06</a></div>						<p>五代i7 128G+500G</p>						<a href="other/index.php?c=List&keyword=500R5H-Y06" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJ1aXDwSIGuf3AACp6ymeJPsAAHSHQDwfR0AAKoD447.jpg" alt="三星 500R5H-Y06"></a>					</li>                                					<li class="item ">						<div class="title"><a href="other/index.php?c=List&keyword=%D0%A1%D0%C2300" target="_blank">联想小新300经典版</a></div>						<p>小心，这个小新价很低！</p>						<a href="other/index.php?c=List&keyword=%D0%A1%D0%C2300" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJlaXDkOIUFLLAACaYgpk7NsAAHSGQJVKvEAAJp6295.jpg" alt="联想小新300经典版"></a>					</li>                                					<li class="item ">						<div class="title"><a href="http://www.zol.com/detail/notebook/acer/25083177.html" target="_blank">宏碁 E5-572G游戏本</a></div>						<p>高分屏 i5标压 2G独显</p>						<a href="http://www.zol.com/detail/notebook/acer/25083177.html" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJ1aXDbOITRGtAAChxYL0P8oAAHSGABSMekAAKHd441.jpg" alt="宏碁 E5-572G游戏本"></a>					</li>                                					<li class="item ">						<div class="title"><a href="http://www.zol.com/detail/notebook/asus/25880881.html" target="_blank">华硕 ZX50玩家国度</a></div>						<p>i5高频+950M游戏独显</p>						<a href="http://www.zol.com/detail/notebook/asus/25880881.html" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJ1aXDPeISPaSAAC_mVIxhjAAAHSFgEfqJQAAL-x840.jpg" alt="华硕 ZX50玩家国度"></a>					</li>                                					<li class="item ">						<div class="title"><a href="other/index.php?c=List&keyword=surface+pro+4" target="_blank">Surface Pro 4 i5/128G</a></div>						<p>轻松+愉快 随时随地办公</p>						<a href="other/index.php?c=List&keyword=surface+pro+4" class="pic" target="_blank"><img width="160" height="120" src="images/ChMkJ1ZmgtKIUxcJAADFl270bGkAAF4HgP-wfYAAMWv854.jpg" alt="Surface Pro 4 i5/128G"></a>					</li>                                                 </ul>            </div>
+			<ul class="brands-list clearfix">                <li><a href="other/index.php?c=List&str=c35_s268&keyword=%C8%FD%D0%C7" target="_blank"><img width="118" height="60" src="images/Cg-4WVV2romIZ-DsAABF1x5kAN0AAE6AwKmvG0AAEXv142.jpg" alt="三星"></a></li>                <li><a href="other/index.php?c=List&keyword=%CB%F7%C4%E1&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WlV_k6eIJz-sAAA3JXJfA7oAAFc0AG7PPYAADc9187.jpg" alt="索尼"></a></li>                <li><a href="other/index.php?c=List&keyword=%C4%E1%BF%B5&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WVV3q8qIQCPuAABJbvLP_4EAAE95gF7S4sAAEmG021.jpg" alt="尼康"></a></li>                <li><a href="other/index.php?c=List&Z_search_type=1&keyword=%BC%D1%C4%DC&do_search=%CC%E1%BD%BB" target="_blank"><img width="118" height="60" src="images/Cg-4WlV3q6iIOAGmAABMBL5rslcAAE95QKqwtQAAEwc861.jpg" alt="佳能"></a></li>                <li><a href="other/index.php?c=List&keyword=%CE%A2%C8%ED&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WlV_lDqIcC7vAABF3BHzeB8AAFc0gJPvH0AAEX0745.jpg" alt="微软"></a></li>                <li><a href="other/index.php?c=List&keyword=Acer&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WVV3qgmIABtEAABJvjFkHxQAAE93gBTLNcAAEnW751.jpg" alt="Acer"></a></li>                <li><a href="other/index.php?c=List&keyword=%C9%F1%D6%DB&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WlV3pz2IfpI7AABGCjc5uFAAAE90QPZM0YAAEYi841.jpg" alt="神舟"></a></li>                <li><a href="other/index.php?c=List&keyword=%B4%F7%B6%FB&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WVV3qZqIH6rVAABH68uVVgUAAE92wP_VqwAAEgD309.jpg" alt="戴尔"></a></li>                <li><a href="other/index.php?c=List&keyword=%BB%AA%CB%B6&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WVV3pl6IE9ikAAA9mUV534IAAE9zgLo4vEAAD2x902.jpg" alt="华硕"></a></li>                <li><a href="other/index.php?c=List&keyword=%C1%AA%CF%EB&do_search=%CB%D1%CB%F7&zp-search-type=1" target="_blank"><img width="118" height="60" src="images/Cg-4WVV20p6IE6brAAAU7NOFKBIAAE6mANtXc0AABUE611.jpg" alt="联想"></a></li>			</ul>                                <div class="ad-div">            	<a href="http://go.zol.com/topic/5637520.html" target="_blank">            		<img width="1200" height="90" src="images/ChMkJlaXdw-ITt4wAADsvQIAIBsAAHS6wH1FK0AAOzV503.jpg" alt="年货狂欢">            	</a>            </div>     	</div>	    </div>	<!-- 商品展示区 END -->
+	<!-- footer 底部 START -->
+   <div class="footer">
+            <div class="wrapper">
+                <ul class="footer-service clearfix">
+                    <li><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe60c;</i>行货保证</a></li>
+                    <li><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe611;</i>发票保障</a></li>
+                    <!--<li><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe614;</i>48小时发货</a></li>-->
+                    <li><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe612;</i>顺丰包邮</a></li>
+                    <li><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe613;</i>无忧退换</a></li>
+                    <li class="last"><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe610;</i>先行赔付</a></li>
+                </ul>
+                <div class="footer-service-relate clearfix">
+                    <dl class="cooperation">
+                        <dt>商家合作</dt>
+                        <dd>
+                            <p>错过天猫？别再错过我们！</p>
+                            <p>ZOL商城开启全新旅程！</p>
+                            <a href="http://zs.zol.com" class="btn" target="_blank"><span>关于入驻</span>&gt;</a>
+                        </dd>
+                    </dl>
+                    <dl class="hotline">
+                        <dt>400-678-0068</dt>
+                        <dd>
+                            <p>工作日 9:00 - 18:00</p>					
+                            <a target="_blank" class="weibo" href="http://weibo.com/zolcom">关注新浪微博</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>购物指南</dt>
+                        <dd>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1126" target="_blank">帐号注册</a></p>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1127" target="_blank">购物流程</a></p>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1228" target="_blank">付款方式</a></p>
+                            					
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>售后服务</dt>
+                        <dd>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1171" target="_blank">先行赔付</a></p>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1128" target="_blank">退款退货流程</a></p>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1168" target="_blank">投诉举报</a></p>
+                                                                					
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>商城保障</dt>
+                        <dd>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1170" target="_blank">行货保障</a></p>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1172" target="_blank">如实描述</a></p>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1174" target="_blank">物流配送</a></p>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1173" target="_blank">48小时发货</a></p>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1175" target="_blank">发票保障</a></p>
+                                                                  					
+                        </dd>
+                    </dl>                    
+                    <dl>
+                        <dt>商家服务</dt>
+                        <dd>
+                                                            <p><a href="http://dealer.zol.com.cn/" target="_blank">商家中心</a></p>
+                                                            <p><a href="http://help.zol.com/index.php?c=Detail&id=1195" target="_blank">商城规则</a></p>
+                                                            <p><a href="http://help.zol.com/index.php?c=List&subClassId=25&grandClassId=171" target="_blank">商家帮助</a></p>
+                                                                					
+                        </dd>
+                    </dl>                    
+                </div>
+            </div>
+            <div class="footer-nav-bar">
+                <div class="wrapper">					<!-- 友情链接 START -->
+                    <div class="partners" style="height:auto;">
+                        <span class="label">合作伙伴：</span>
+                        <!--<span class="more more-open">更多</span>-->
+                                                    <p>
+                                                                    <a href="http://www.juanpi.com/" target="_blank">卷皮网</a>|
+                                                                    <a href="http://www.99114.com/" target="_blank">电子商务平台</a>|
+                                                                    <a href="http://www.cebnet.com.cn/" target="_blank">中国电子银行网</a>|
+                                                                    <a href="http://www.vmall.com" target="_blank">华为商城</a>|
+                                                                    <a href="http://www.301688.com" target="_blank">三帝贸易网</a>|
+                                                                    <a href="http://www.pztuan.com/index.aspx" target="_blank">团购</a>|
+                                                                    <a href="http://shop.enet.com.cn/" target="_blank">eNet商城</a>|
+                                                                    <a href="http://www.eachnet.com/" target="_blank">易趣</a>|
+                                                                    <a href="http://www.meilele.com/" target="_blank">家具网</a>|
+                                                                    <a href="http://www.wbiao.cn/" target="_blank">手表品牌大全</a>|
+                                                                    <a href="http://www.dionly.com/" target="_blank">钻石</a>|
+                                                                    <a href="http://www.yxlady.com/" target="_blank">伊秀女性网</a>|
+                                                                    <a href="http://www.hqew.com/" target="_blank">华强电子网</a>|
+                                                                    <a href="http://www.eepw.com.cn" target="_blank">电子产品世界</a>|
+                                                                    <a href="http://www.wadongxi.com" target="_blank">挖东西比价网</a>|
+                                                                    <a href="http://www.admaimai.com" target="_blank">广告网</a>|
+                                                                    <a href="http://www.egou.com" target="_blank">易购网</a>|
+                                    
+                            </p>    
+               		</div>					<!-- 友情链接 END -->					<!--                     <div class="footer-nav"><a href="http://www.zol.com.cn/" target="_blank">中关村在线</a>|<a href="http://www.zol.com/" target="_blank">ZOL商城</a>|<a href="http://tuan.zol.com/" target="_blank">Z团</a>|<a href="http://qiang.zol.com/" target="_blank">限时抢购</a>|<a href="http://zc.zol.com/" target="_blank">Z众筹</a>|<a href="http://dealer.zol.com.cn/beijing/" target="_blank">经销商</a>|<a href="http://detail.zol.com.cn/" target="_blank">产品报价</a>|<a href="http://bbs.zol.com.cn/" target="_blank">论坛</a>|<a href="http://ask.zol.com.cn/" target="_blank">问答</a></div>
+					 -->
+                    <div class="copyright">
+                        <a href="http://help.zol.com/index.php?c=Detail&id=1254" target="_blank">关于ZOL商城</a>|<a href="http://help.zol.com/index.php?c=Default" target="_blank">帮助中心</a>|<a href="http://help.zol.com/index.php?c=Detail&id=1256" target="_blank">联系我们</a>|<a href="http://help.zol.com/index.php?c=Detail&id=1257" target="_blank">发展历程</a>|<a href="http://help.zol.com/index.php?c=Detail&id=1255" target="_blank">媒体报道</a><span>&copy;2015 中关村在线 版权所有. 京ICP备09041801号-182 京ICP证010391号</span>
+                    </div>
+                    <div class="authentication clearfix"><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001021500016" target="_blank"><img src="images/beian.jpg" width="85" height="32"></a><a href="http://fzp.bjhd.gov.cn/tabid/179/Default.aspx" target="_blank"><img src="images/jingcha.jpg" width="86" height="32"></a><a href="https://search.szfw.org/cert/l/CX20111228001277001325" target="_blank"><img src="images/chengxin.jpg" width="90" height="32"></a></div>
+                </div>
+            </div>
+        </div>	<!-- footer 底部 END -->
+
+        <form action="other/index.php" method="get" id="zsSearch">
+            <input type="hidden" name="c" value="List">    
+            <div class="search-layer" id="search_layer_fixed" style="display:none;">
+                <div class="wrapper clearfix">
+                    <a href="http://www.zol.com" class="logo"><img src="images/logo_157x32.png" width="157" height="32"></a>
+                    <div class="search-box">
+                        <div class="search">
+                            <input name="keyword" type="text" class="search-text" value="">
+                            <input type="submit" value="搜 索" class="search-btn" hidefocus="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>    
+
+<!--        <div id="pubFeedBack" class="widget" style="display:none;">
+            <a class="feedback" href="http://service.zol.com.cn/complain" id="callSurvey" title="建议反馈">建议反馈</a>
+            <a class="backtop" href="#top" id="backTop" title="返回顶部" style="display: none;">返回顶部</a>
+        </div>-->
+        <a href="http://www.wenjuan.com/s/NjAzmiO/" target="_blank" class="research-link" ></a>
+        <script src="js/ExcellentFeedBack.js"></script>
+        <script>
+            var searchFunction = {
+                searchKeyword: null,
+                searchButton: null,
+                searchHistory: null,
+                searchHistoryList: null,
+                searchHistoryListDel: null,
+                searchHistoryListClose: null,
+                getHistoryList: function () {
+                    if (typeof jQuery == "undefined") {
+                        return false;
+                    } else {
+                        var url = "other/index.php?c=Ajax_PublicHead&a=AjaxGetSearchHistory&callback=?&t=" + Math.random();
+                        $.getJSON(url, function (data) {
+                            if (data.msg) {
+                                $(".search").append(data.msg);
+                                searchFunction.getElements();
+                                searchFunction.eventListener();
+                            }
+                        });
+                    }
+                },
+                getElements: function () {
+                    searchFunction.searchKeyword = document.querySelector(".search .search-text");
+                    searchFunction.searchButton = document.querySelector(".search .search-btn");
+                    searchFunction.searchHistory = document.querySelector(".search-history");
+                    searchFunction.searchHistoryList = document.querySelectorAll(".search-history ul li");
+                    searchFunction.searchHistoryListDel = document.querySelectorAll(".search-history ul li .delete");
+                    searchFunction.searchHistoryListClose = document.querySelector(".search-history .close");
+                },
+                eventListener: function () {
+                    searchFunction.searchKeyword.addEventListener("focus", function () {
+                        searchFunction.showHistory();
+                    });
+                    searchFunction.searchKeyword.addEventListener("click", function () {
+                        searchFunction.showHistory();
+                    });
+                    searchFunction.searchKeyword.addEventListener("keypress", function (e) {
+                        if (window.event) {
+                            e = window.event;
+                        }
+                        var keyNumber = e.keyCode;
+                        if (13 == keyNumber) {
+                            searchFunction.searchButton.click();
+                        }
+                    });
+                    searchFunction.searchHistory.addEventListener("mouseleave", function () {
+                        searchFunction.hideHistory();
+                    });
+                    searchFunction.searchHistoryListClose.addEventListener("click", function () {
+                        searchFunction.hideHistory();
+                    });
+                    for (var i = 0; i < searchFunction.searchHistoryList.length; i++) {
+                        searchFunction.searchHistoryList[i].addEventListener("click", searchFunction.clickHistory(searchFunction.searchHistoryList[i]));
+                    }
+                    for (var i = 0; i < searchFunction.searchHistoryListDel.length; i++) {
+                        searchFunction.searchHistoryListDel[i].addEventListener("click", searchFunction.deleteHistory(searchFunction.searchHistoryListDel[i]));
+                    }
+                },
+                showHistory: function () {
+                    searchFunction.searchHistory.style.display = "block";
+                },
+                clickHistory: function (obj) {
+                    return function () {
+                        searchFunction.searchKeyword.value = obj.getAttribute("keyword");
+                        searchFunction.searchButton.click();
+                    };
+                },
+                deleteHistory: function (obj, e) {
+                    return function () {
+                        searchFunction.stopPropagation(e);
+                        var dataId = obj.getAttribute("data-id");
+                        var url = "other/index.php?c=Ajax_PublicHead&a=AjaxDeleteSearchHistory&callback=?&t=" + Math.random();
+                        $.getJSON(url, {dataId: dataId}, function (data) {
+                            if (data.flag) {
+                                obj.parentNode.style.display = "none";
+                            }
+                        });
+                    };
+                },
+                hideHistory: function () {
+                    searchFunction.searchHistory.style.display = "none";
+                },
+                stopPropagation: function (e) {
+                    e = e || window.event;
+                    if (e.stopPropagation) {
+                        e.stopPropagation();
+                    } else {
+                        e.cancelBubble = true;
+                    }
+                }
+            };
+            searchFunction.getHistoryList();
+
+            // 限时抢购倒计时
+            $.extend({
+                promoClock: function (classId, endTime, nowTime) {
+                    var leave = endTime - nowTime;
+                    var lastTime = '';
+                    if (leave <= 0) {
+                        var lastTime = "抢购已结束";
+                    } else {
+                        var hour = Math.floor(leave / 3600);
+                        var minute = Math.floor(leave / 60) - (hour * 60);
+                        var second = leave - (hour * 3600) - (minute * 60);
+                        hour = hour < 10 ? "0" + hour : hour;
+                        minute = minute < 10 ? "0" + minute : minute;
+                        second = second < 10 ? "0" + second : second;
+                        lastTime = '距抢购结束<em>' + hour + '</em>小时<em>' + minute + '</em>分<em>' + second + '</em>秒';
+                        $('#' + classId).html(lastTime);
+                        endTime--;
+                        setTimeout("$.promoClock('" + classId + "', '" + endTime + "', '" + nowTime + "')", 1000);
+                    }
+                }
+            });
+
+            // 话费充值
+            var mobileFee = 50;
+            function checkMobileNumber(mobileNumber) {
+                if (mobileNumber == '') {
+                    $('#feeError').html("请输入手机号");
+                    $("#feeMobile").focus();
+                    return false;
+                }
+                var rg = /^(?:1\d\d)-?\d{5}(\d{3}|\*{3})$/;
+                var isMobile = rg.test(mobileNumber);
+                if (!isMobile) {
+                    $('#feeError').html("请输入正确的手机号码").show();
+                    $("#feeMobile").focus();
+                    return false;
+                }
+                $('#feeError').html('');
+                return true;
+            }
+
+            $('#feeBox').blur(function () {
+                $("#feeBox").hide();
+            });
+
+            $("#selectFee").click(function () {
+                var mobile = $("#feeMobile").val();
+                var checkMobile = checkMobileNumber(mobile);
+                if (checkMobile) {
+                    $("#feeBox").show();
+                } else {
+                    $('#feeError').html("请输入正确的手机号码").show();
+                }
+            });
+
+            $("#feeBox>a").click(function () {
+                var mobile = $("#feeMobile").val();
+                var checkMobile = checkMobileNumber(mobile);
+                if (checkMobile) {
+                    var selFee = $(this).html();
+                    $("#selectFee").html(selFee);
+                    $("#feeBox").hide();
+                    mobileFee = $(this).attr('val');
+
+                    $.getJSON("http://api.zol.com/index.php?c=Recharge_WebSiteRecharge&a=GetBm274Price&mobile=" + mobile + "&facePrice=" + mobileFee + "&jsoncallback=?", function (json) {
+                        if (json.IsSuccess) {
+                            $('#sallPrice').html('<span class="price">￥<em>' + json.Price + '</em></span>');
+                        } else {
+                            $('#sallPrice').html('获取价格失败');
+                        }
+                    });
+
+                }
+            });
+
+            // 焦点图特效
+            var adTimer1 = adTimer2 = adTimer3 = adTimer4 = adTimer5 = null;
+            var currslid1 = currslid2 = currslid3 = currslid4 = currslid5 = 1;
+
+            function showImg(currslid, imgDiv, adWidth) {
+                if (!currslid) {
+                    $("#" + imgDiv + "Ul").stop(true, false).animate({left: -adWidth * currslid}, 500);
+                } else {
+                    $("#" + imgDiv + "Ul").stop(true, false).animate({left: -adWidth * currslid}, 500);
+                }
+                $("#" + imgDiv + "Span > span:eq(" + currslid + ")").addClass("current").siblings().removeClass("current");
+                $("#" + imgDiv + "Next").attr({'page': currslid});
+                $("#" + imgDiv + "Prev").attr({'page': currslid});
+            }
+
+            function playIt(imgType) {
+                var imgType = parseInt(imgType);
+                var adWidth = 419;
+                switch (imgType) {
+                    case 1:
+                        var adWidth = 740;
+                        var courrLen = $("#indexFocusSpan > span").length;
+                        if (courrLen > 1) {
+                            adTimer1 = setInterval(function () {
+                                showImg(currslid1, 'indexFocus', adWidth);
+                                currslid1++;
+                                if (currslid1 >= courrLen) {
+                                    currslid1 = 0;
+                                }
+                            }, 3000);
+                        }
+                        break;
+                    case 2:
+                        var courrLen = $("#mobileFocusSpan > span").length;
+                        if (courrLen > 1) {
+                            adTimer2 = setInterval(function () {
+                                showImg(currslid2, 'mobileFocus', adWidth);
+                                currslid2++;
+                                if (currslid2 == courrLen) {
+                                    currslid2 = 0;
+                                }
+                            }, 3000);
+                        }
+                        break;
+                    case 3:
+                        var courrLen = $("#computerFocusSpan > span").length;
+                        if (courrLen > 1) {
+                            adTimer3 = setInterval(function () {
+                                showImg(currslid3, 'computerFocus', adWidth);
+                                currslid3++;
+                                if (currslid3 == courrLen) {
+                                    currslid3 = 0;
+                                }
+                            }, 3000);
+                        }
+                        break;
+                    case 4:
+                        var courrLen = $("#digitalFocusSpan > span").length;
+                        if (courrLen > 1) {
+                            adTimer4 = setInterval(function () {
+                                showImg(currslid4, 'digitalFocus', adWidth);
+                                currslid4++;
+                                if (currslid4 == courrLen) {
+                                    currslid4 = 0;
+                                }
+                            }, 3000);
+                        }
+                        break;
+                    case 5:
+                        var courrLen = $("#diyFocusSpan > span").length;
+                        if (courrLen > 1) {
+                            adTimer5 = setInterval(function () {
+                                showImg(currslid5, 'diyFocus', adWidth);
+                                currslid5++;
+                                if (currslid5 == courrLen) {
+                                    currslid5 = 0;
+                                }
+                            }, 3000);
+                        }
+                        break;
+                }
+            }
+
+
+            function stopIt(imgType) {
+                imgType = parseInt(imgType);
+                switch (imgType) {
+                    case 1:
+                        clearInterval(adTimer1);
+                        break;
+                    case 2:
+                        clearInterval(adTimer2);
+                        break;
+                    case 3:
+                        clearInterval(adTimer3);
+                        break;
+                    case 4:
+                        clearInterval(adTimer4);
+                        break;
+                    case 5:
+                        clearInterval(adTimer5);
+                        break;
+                }
+            }
+
+            $(function () {
+                // 限时抢购时间显示
+                $(".flash-sale-list li").hover(function () {
+                    $(this).addClass('hover');
+                }, function () {
+                    $(this).removeClass('hover');
+                });
+                // 限时抢购倒计时
+                    $.promoClock('promoCoutDown8', '', Z_now_time);
+                    $.promoClock('promoCoutDown7', '', Z_now_time);
+                    $.promoClock('promoCoutDown6', '', Z_now_time);
+                    $.promoClock('promoCoutDown5', '', Z_now_time);
+                    $.promoClock('promoCoutDown4', '', Z_now_time);
+                    $.promoClock('promoCoutDown3', '', Z_now_time);
+                    $.promoClock('promoCoutDown2', '', Z_now_time);
+                    $.promoClock('promoCoutDown1', '', Z_now_time);
+                    $.promoClock('promoCoutDown0', '', Z_now_time);
+
+
+                // 楼层品牌
+                $(".brands-list > li").hover(function () {
+                    $(this).addClass('hover');
+                }, function () {
+                    $(this).removeClass('hover');
+                });
+
+                // 焦点图
+                playIt(1);
+                playIt(2);
+                playIt(3);
+                playIt(4);
+                playIt(5);
+
+                $(".focus-switch > span").mouseover(function () {
+                    var imgType = $(this).parent().attr('rel');
+                    imgType = parseInt(imgType);
+                    var imgDiv = '';
+                    var adWidth = 419;
+                    currslid = parseInt($(this).attr("rel"));
+                    switch (imgType) {
+                        case 1:
+                            currslid1 = currslid;
+                            imgDiv = 'indexFocus';
+                            adWidth = 740;
+                            break;
+                        case 2:
+                            currslid2 = currslid;
+                            imgDiv = 'mobileFocus';
+                            break;
+                        case 3:
+                            currslid3 = currslid;
+                            imgDiv = 'computerFocus';
+                            break;
+                        case 4:
+                            currslid4 = currslid;
+                            imgDiv = 'digitalFocus';
+                            break;
+                        case 5:
+                            currslid5 = currslid;
+                            imgDiv = 'diyFocus';
+                            break;
+                    }
+
+                    showImg(currslid, imgDiv, adWidth);
+                    stopIt(imgType);
+                    $(this).addClass('current').siblings().removeClass('current');
+                }).mouseleave(function () {
+                    var imgType = $(this).parent().attr('rel');
+                    playIt(imgType);
+                });
+
+                var isIE = navigator.userAgent.indexOf("MSIE 6.0") === -1 ? 0 : 1;
+                if (!isIE) {
+                    $(".focus-box").mouseenter(function () {
+                        $(this).children(".focus-prev-btn").show();
+                        $(this).children(".focus-next-btn").show();
+                    }).mouseleave(function () {
+                        $(this).children(".focus-prev-btn").hide();
+                        $(this).children(".focus-next-btn").hide();
+                    });
+                }
+
+
+                $(".focus-prev-btn, .focus-next-btn").click(function () {
+                    var imgType = $(this).attr('rel');
+                    imgType = parseInt(imgType);
+                    var courrLen = parseInt($(this).attr('number'));
+                    var currslid = parseInt($(this).attr('page'));
+                    var clickType = $(this).attr('type');
+
+                    if ('next' == clickType) {
+                        if ((currslid + 1) >= courrLen) {
+                            currslid = 0;
+                        } else {
+                            currslid++;
+                        }
+                    } else {
+                        if (!currslid) {
+                            currslid = (courrLen - 1);
+                        } else {
+                            currslid--;
+                        }
+
+                    }
+
+                    var imgDiv = '';
+                    var adWidth = 419;
+                    switch (imgType) {
+                        case 1:
+                            currslid1 = currslid;
+                            imgDiv = 'indexFocus';
+                            adWidth = 740;
+                            break;
+                        case 2:
+                            currslid2 = currslid;
+                            imgDiv = 'mobileFocus';
+                            break;
+                        case 3:
+                            currslid3 = currslid;
+                            imgDiv = 'computerFocus';
+                            break;
+                        case 4:
+                            currslid4 = currslid;
+                            imgDiv = 'digitalFocus';
+                            break;
+                        case 5:
+                            currslid5 = currslid;
+                            imgDiv = 'diyFocus';
+                            break;
+                    }
+
+                    showImg(currslid, imgDiv, adWidth);
+                    stopIt(imgType);
+                    $("#" + imgDiv + "Span > span").removeClass('current');
+
+                    var rel = 0;
+                    $("#" + imgDiv + "Span > span").each(function () {
+                        rel = parseInt($(this).attr('rel'));
+                        if (rel == currslid) {
+                            $(this).addClass('current');
+                        }
+                    });
+
+                });
+
+
+                $("#feeMobile").bind("keyup", function () {
+                    var mobile = $(this).val();
+                    var mobileLen = mobile.length;
+                    if (11 == mobileLen) {
+                        var checkMobile = checkMobileNumber(mobile);
+                        if (checkMobile) {
+                            $('#feeError').html('').hide();
+                        }
+                    }
+                });
+
+                $("#feeMobile").bind("blur", function () {
+                    var mobile = $(this).val();
+                    var mobileLen = mobile.length;
+                    if (11 == mobileLen) {
+                        var checkMobile = checkMobileNumber(mobile);
+                        if (checkMobile) {
+                            $('#feeError').html('').hide();
+                        } else {
+                            $('#feeError').html("请输入正确的手机号码");
+                            $("#feeMobile").focus();
+                        }
+                    }
+                });
+
+
+                // 话费充值
+                $("#subAddFee").click(function () {
+                    var mobile = $("#feeMobile").val();
+                    var checkMobile = checkMobileNumber(mobile);
+                    if (checkMobile) {
+                        $("input[name=fp]").val(mobileFee);
+                        $('#addFeeForm').attr("action", "http://zol.bm724.com/Views/hfcharge.html?p=" + mobile + "&fp=" + mobileFee + "&b=zol");
+                        return true;
+                    } else {
+                        $('#feeError').html("请输入正确的手机号码");
+                        return false;
+                    }
+                });
+
+                // 左侧导航特效
+                $(".menu-nav-container > li").hover(function () {
+                    $(this).addClass("current");
+                },
+                        function () {
+                            $(this).removeClass("current");
+                        });
+
+            });
+
+            var __Window = $(window);
+            var __Body = $(document);
+            var topNavObj = {};
+            //获取屏幕高度
+            topNavObj.getClientHeight = function () {
+                var clientHeight = __Window.height();
+                this.winHeight = parseInt(clientHeight);
+                return this.winHeight;
+            }
+            //获取当前页面已滚动的高度
+            topNavObj.getScrollHeight = function () {
+                var scrollTop = __Body.scrollTop();
+                this.scrollTop = parseInt(scrollTop);
+                return this.scrollTop;
+            }
+            //初始化调用
+            topNavObj.init = function () {
+                this.getClientHeight();
+            }
+            //滚动事件监听
+            topNavObj.init();
+            var topNavDiv = $("#search_layer_fixed");
+            __Window.scroll(function () {
+                var hasScrollTop = topNavObj.getScrollHeight();
+                if (hasScrollTop > topNavObj.winHeight) {
+                    topNavDiv.show();
+                } else {
+                    topNavDiv.fadeOut(300);
+                }
+            });
+            //意见建议调用
+            var baseDetailUrl = "other/index.php?";//Ajax请求基础域名
+            var cType = 'Index';//建议反馈
+            var aType = 'Index';//建议反馈
+            $(function () {
+                //调用
+                $.survey({channel: '首页'});
+            });
+            
+            if (document.getElementById('noresearch_keyword')) {
+                  document.getElementById('noresearch_keyword').addEventListener('click', function() {
+                      getUserTrack('noresearch_keyword');
+                  });
+            }            
+            
+            // 双11吸底
+//            $('.activity-suck-bottom .inner .close').click(function(){
+//                $(this).parents('.activity-suck-bottom').animate({margin:'0 0 0 -1920px',left:'0'},700);
+//                $('.activity-entry').animate({left:'0px'},700);
+//            });
+//            $('.activity-entry').click(function(){
+//                $(this).animate({left:'-'+$(this).width()+'px'},700);
+//                $('.activity-suck-bottom').animate({
+//                    left:'50%',
+//                    margin:'0 0 0 -960px',
+//                },700);
+//            });
+        </script>
+        
+        <!-- 侧边栏 -->
+        <div class="zc-side-toolbar-box" id="side-toolbar-wrapper" data-url="/index.php?c=Ajax_RightSidebar">
+    <div class="zc-toolbar-tabbar">
+        <div class="zc-operation-tabbox" id="operation_region">
+            
+            <!-- QQ -->
+            <div class="zc-qq" style="display:none">	<!--  zc-qq-hover -->
+                <div class="zc-qq-ico"></div>
+                <div class="zc-qq-layer">
+                    <i class="zc-triangle"></i>
+                    <i class="zc-close"></i>
+                    <div class="zc-shop-name">点沸数码点沸数码点…</div>
+                    <ul>
+                        <li>
+                            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1029884265&amp;site=qq&amp;menu=yes" target="_blank"><img border="0" title="点击这里给我发消息" alt="点击这里给我发消息" src="other/.com/pa?p=2:1029884265:52"></a><span>店长</span>
+                        </li>
+                        <li>
+                            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1029884265&amp;site=qq&amp;menu=yes" target="_blank"><img border="0" title="点击这里给我发消息" alt="点击这里给我发消息" src="other/.com/pa?p=2:1029884265:52"></a><span>店长</span>
+                        </li>
+                        <li>
+                            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1029884265&amp;site=qq&amp;menu=yes" target="_blank"><img border="0" title="点击这里给我发消息" alt="点击这里给我发消息" src="other/.com/pa?p=2:1029884265:52"></a><span>店长</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 订单 -->
+            <div class="zc-tab-order" data-tips="我的订单" data-role="OrderInfo">	<!--  zc-tab-hover -->
+                <div class="zc-tab-ico"></div>
+            </div>
+
+            <!-- 关注 -->
+            <div class="zc-tab-attention" data-role="attention" style="display:none;">	<!--  zc-tab-hover -->
+                <div class="zc-attention-border">
+                    <div class="zc-tab-ico"></div>
+                    <div class="zc-tab-txt">我的关注</div>
+                </div>
+
+                <!-- 消息通知层 -->
+                <div class="zc-success-attention" style="display:none">
+                    <i class="zc-triangle"></i>
+                    <i class="zc-close"></i>
+                    <div class="zc-title">成功加入我的关注</div>
+                    <p>您可以查看<a href="#">我的关注</a></p>
+                </div>
+
+            </div>
+
+            <!-- 足迹 -->
+            <div class="zc-tab-footprint" data-tips="我的足迹" data-role="BrowseHistroy">	<!--  zc-tab-hover -->
+                <div class="zc-tab-ico"></div>
+            </div>
+
+            <!-- 购物车 -->
+            <div class="zc-tab-cart" data-tips="购物车" data-role="ShopCart">	<!--  zc-tab-hover -->
+                <div class="zc-tab-ico"></div>
+                <span class="zc-number" id="cart-total">5</span>
+
+                <!-- 消息通知层 -->
+                <div class="zc-success-attention" id="toast" style="display:none">
+                    <i class="zc-triangle"></i>
+                    <i class="zc-close"></i>
+                    <div class="zc-title">成功加入购物车</div>
+                    <p>您可以去<a href="#">购物车结算</a></p>
+                </div>
+
+            </div>
+        </div>
+        <div class="zc-toolbar-tool" id="show_region">
+
+            <!-- 关注 -->
+            <!--  zc-attention-click -->
+            <div class="zc-attention-bar" style="display:none;">
+                <div class="zc-attention-ico"></div>
+                <div class="zc-attention-layer">
+                    <i class="zc-triangle"></i>
+                    <i class="zc-close"></i>
+                    <div class="zc-title">活动关注成功！</div>
+                </div>
+            </div>
+
+            <!-- 分享 -->
+            <!--  zc-share-bar-hover -->
+            <div class="zc-share-bar" style="display:none;">
+                <div class="zc-share-ico"></div>
+                <div class="zc-share-layer">
+                    <i class="zc-triangle"></i>
+                    <div class="bdsharebuttonbox bdshare_t bds_tools get-codes-bdshare bdshare-button-style0-16" id="bdshare" data-bd-bind="1403577164954">
+                        <a data-cmd="tsina" class="bds_tsina" title="分享到新浪微博"></a>
+                        <a data-cmd="qzone" class="bds_qzone" title="分享到QQ空间"></a>
+                        <a data-cmd="tqq" class="bds_tqq" title="分享到腾讯微博"></a>
+                        <a data-cmd="sqq" class="bds_sqq" title="分享到QQ"></a>
+                        <a data-cmd="weixin" class="bds_weixin" title="分享到微信"></a>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- 建议 -->
+            <a href="http://www.wenjuan.com/s/NjAzmiO/" class="zc-feedback" target="blank">建议反馈</a>
+
+            <!-- 二维码 -->
+            <!-- zc-phone-login-hover -->
+            <div class="zc-phone-login" style="display:none;">
+                <i class="zc-ico"></i>
+                <div class="zc-layer">
+                    <i class="zc-triangle"></i>
+                    <img width="150" height="150" src="images/photo.jpg" alt="">
+                    <div class="zc-title">登录手机商城</div>
+                    <div class="zc-subtitle">享受不一样的购物体验</div>
+                </div>
+            </div>
+            <!-- 返回顶部 -->
+            <a href="#" class="zc-backtop"></a>
+        </div>
+    </div>
+
+    <!-- Hover Tips -->
+    <div class="zc-tab-tips" id="hover_tips"></div>
+
+    <!-- 右侧切换层 -->
+    <div class="zc-toolbar-plugins">
+
+        <!-- 我的订单 -->
+        <div class="zc-toolbar-plugin">
+            <div class="zc-toolbar-plugin-hd">
+                <div class="zc-toolbar-plugin-title">我的订单</div>
+                <div class="zc-toolbar-plugin-close"></div>
+            </div>
+            <div class="zc-toolbar-plugin-bd">
+                <div class="zc-scroll-bd">
+                    <ul class="zc-order-list" data-contains="OrderInfo"></ul>
+                </div>
+                <div class="zc-view-all"><a href="http://my.zol.com/index.php?c=OrderManage"><span>查看全部</span>&gt;&gt;</a></div>
+            </div>
+        </div>
+        <!-- //我的订单 -->
+
+        <!-- 我的足迹 -->
+        <div class="zc-toolbar-plugin zc-footprint-box">
+            <div class="zc-toolbar-plugin-hd">
+                <div class="zc-toolbar-plugin-title">我的足迹</div>
+                <div class="zc-toolbar-plugin-close"></div>
+            </div>
+            <div class="zc-toolbar-plugin-bd">
+                <div class="zc-footprint-hd">
+                    <div class="zc-tips">在这里可以查看您的浏览记录</div>
+                </div>
+                <div class="zc-scroll-bd">
+                    <div data-contains="BrowseHistroy">
+                        <div class="zc-number">
+                            共<em id="history-total">13</em>件商品<span class="zc-remove-btn">清空</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //我的足迹 -->
+
+        <!-- 购物车 -->
+        <div class="zc-toolbar-plugin zc-cart-box">
+            <div class="zc-toolbar-plugin-hd">
+                <div class="zc-toolbar-plugin-title">购物车</div>
+                <div class="zc-toolbar-plugin-close"></div>
+                <a href="http://order.zol.com/index.php?c=Cart" class="zc-all-links">全部&gt;&gt;</a>
+            </div>
+            <div class="zc-toolbar-plugin-bd">
+                <div class="zc-scroll-bd">
+                    <ul class="zc-cart-list" data-contains="ShopCart"></ul>
+                </div>
+            </div>
+        </div>
+        <!-- //购物车 -->
+
+        <!-- 我的关注 -->
+        <div class="zc-toolbar-plugin zc-attention-box" style="display:none;">
+            <div class="zc-toolbar-plugin-hd">
+                <div class="zc-toolbar-plugin-title">我的关注</div>
+                <div class="zc-toolbar-plugin-close"></div>
+            </div>
+            <div class="zc-toolbar-plugin-bd">
+                <ul class="zc-tabbar clearfix">
+                    <li>商品<em>(134)</em></li>
+                    <li>活动<em>(0)</em></li>
+                    <li class="zc-current">店铺<em>(11)</em></li>
+                </ul>
+                <!-- 商品 -->
+                <div class="zc-goods-box">
+                    <div class="zc-empty-box" style="display:none;">
+                        <p>在这里，可随时看到关注的商品</p>
+                        <p>记得关注您心仪的商品哟~</p>
+                    </div>
+                    <div class="zc-goods-hd">
+                        <div class="zc-goods-number">共关注了<em>13</em>件商品</div>
+                        <div class="zc-goods-classify zc-goods-classify-trig ger">
+                            <span class="zc-hd">分类</span>
+                            <ul class="zc-classify-list clearfix">
+                                <li><a href="#">手机(2)</a></li>
+                                <li><a href="#">手机配件(2)</a></li>
+                                <li><a href="#">笔记本(5)</a></li>
+                                <li><a href="#">耳机(5)</a></li>
+                                <li><a href="#">平板电脑(3)</a></li>
+                                <li><a href="#">全部（17）</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="zc-scroll-bd" style="height:700px;">
+
+                        <div class="zc-goods-item">
+                            <div class="zc-time-show">当天</div>
+                            <div class="zc-attention-goods">
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="#" class="zc-pic">
+                                            <img width="100" height="100" src="images/photo.jpg" alt="">
+                                            <span class="zc-price">&yen;2899</span>
+                                        </a>
+                                        <a href="#" class="zc-delete" style="display:block;"><i class="zc-ico"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="zc-pic">
+                                            <img width="100" height="100" src="images/photo.jpg" alt="">
+                                            <span class="zc-price">&yen;2899</span>
+                                        </a>
+                                        <a href="#" class="zc-delete"><i class="zc-ico"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="zc-pic">
+                                            <img width="100" height="100" src="images/photo.jpg" alt="">
+                                            <span class="zc-price">&yen;2899</span>
+                                        </a>
+                                        <a href="#" class="zc-delete"><i class="zc-ico"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="zc-pic">
+                                            <img width="100" height="100" src="images/photo.jpg" alt="">
+                                            <span class="zc-price">&yen;2899</span>
+                                        </a>
+                                        <a href="#" class="zc-delete"><i class="zc-ico"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="zc-goods-item">
+                            <div class="zc-time-show">最近7天</div>
+                            <div class="zc-attention-goods">
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="#" class="zc-pic">
+                                            <img width="100" height="100" src="images/photo.jpg" alt="">
+                                            <span class="zc-price">&yen;2899</span>
+                                        </a>
+                                        <a href="#" class="zc-delete" style="display:block;"><i class="zc-ico"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="zc-pic">
+                                            <img width="100" height="100" src="images/photo.jpg" alt="">
+                                            <span class="zc-price">&yen;2899</span>
+                                        </a>
+                                        <a href="#" class="zc-delete"><i class="zc-ico"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="zc-goods-item">
+                            <div class="zc-time-show">一周前</div>
+                            <div class="zc-attention-goods">
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="#" class="zc-pic">
+                                            <img width="100" height="100" src="images/photo.jpg" alt="">
+                                            <span class="zc-price">&yen;2899</span>
+                                        </a>
+                                        <a href="#" class="zc-delete"><i class="zc-ico"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="zc-pic">
+                                            <img width="100" height="100" src="images/photo.jpg" alt="">
+                                            <span class="zc-price">&yen;2899</span>
+                                        </a>
+                                        <a href="#" class="zc-delete"><i class="zc-ico"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zc-view-all"><a href="#"><span>查看全部</span>&gt;&gt;</a></div>
+                </div>
+                <!-- //商品 -->
+
+                <!-- 活动 -->
+                <div class="zc-activity-box" style="display:none;">
+                    <div class="zc-empty-box" style="display:none;">
+                        <p>亲，您可能</p>
+                        <p>还没有关注过我们的活动呢~</p>
+                    </div>
+                    <div class="zc-empty-box" style="display:none;">
+                        <p>亲，虽然错过了</p>
+                        <p>但我们还有更多活动等着您！</p>
+                    </div>
+                    <div class="zc-scroll-bd">
+
+                        <ul class="zc-activity-list" style="height:700px;">
+                            <li>
+                                <div class="zc-hd">活动进行中…<i class="zc-cancel-btn"></i></div>
+                                <div class="zc-activity-name">夏季办公室小家电推荐</div>
+                                <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                <a href="#" class="zc-activity-button">进入活动</a>
+                            </li>
+                            <li>
+                                <div class="zc-hd">活动进行中…<i class="zc-cancel-btn"></i></div>
+                                <div class="zc-activity-name">夏季办公室小家电推荐</div>
+                                <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                <a href="#" class="zc-activity-button">进入活动</a>
+                            </li>
+                            <li>
+                                <div class="zc-hd">活动进行中…<i class="zc-cancel-btn"></i></div>
+                                <div class="zc-activity-name">夏季办公室小家电推荐</div>
+                                <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                <a href="#" class="zc-activity-button">进入活动</a>
+                            </li>
+                            <li>
+                                <div class="zc-hd">活动进行中…<i class="zc-cancel-btn"></i></div>
+                                <div class="zc-activity-name">夏季办公室小家电推荐</div>
+                                <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                <a href="#" class="zc-activity-button">进入活动</a>
+                            </li>
+                            <li>
+                                <div class="zc-hd">活动进行中…<i class="zc-cancel-btn"></i></div>
+                                <div class="zc-activity-name">夏季办公室小家电推荐</div>
+                                <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                <a href="#" class="zc-activity-button">进入活动</a>
+                            </li>
+                            <li>
+                                <div class="zc-hd">活动进行中…<i class="zc-cancel-btn"></i></div>
+                                <div class="zc-activity-name">夏季办公室小家电推荐</div>
+                                <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                <a href="#" class="zc-activity-button">进入活动</a>
+                            </li>
+                            <li>
+                                <div class="zc-hd">活动进行中…<i class="zc-cancel-btn"></i></div>
+                                <div class="zc-activity-name">夏季办公室小家电推荐</div>
+                                <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                <a href="#" class="zc-activity-button">进入活动</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="zc-view-all"><a href="#"><span>查看全部</span>&gt;&gt;</a></div>
+                    <div class="zc-more-activity-box">
+                        <div class="zc-unfold-btn zc-fold-btn"><i class="zc-ico"></i></div>
+                        <div class="zc-scroll-bd" style="height:auto;">
+                            <div class="zc-scroll-bar" style="height:24px;"></div>
+                            <div class="zc-more-activity-hd">其他进行中的活动 (8)</div>
+                            <ul>
+                                <li>
+                                    <div class="zc-activity-name">小家电红六月</div>
+                                    <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                    <a href="#" class="zc-activity-button">进入活动</a>
+                                </li>
+                                <li>
+                                    <div class="zc-activity-name">小家电红六月</div>
+                                    <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                    <a href="#" class="zc-activity-button">进入活动</a>
+                                </li>
+                                <li>
+                                    <div class="zc-activity-name">小家电红六月</div>
+                                    <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                    <a href="#" class="zc-activity-button">进入活动</a>
+                                </li>
+                                <li>
+                                    <div class="zc-activity-name">小家电红六月</div>
+                                    <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                    <a href="#" class="zc-activity-button">进入活动</a>
+                                </li>
+                                <li>
+                                    <div class="zc-activity-name">小家电红六月</div>
+                                    <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                    <a href="#" class="zc-activity-button">进入活动</a>
+                                </li>
+                                <li>
+                                    <div class="zc-activity-name">小家电红六月</div>
+                                    <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                    <a href="#" class="zc-activity-button">进入活动</a>
+                                </li>
+                                <li>
+                                    <div class="zc-activity-name">小家电红六月</div>
+                                    <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                    <a href="#" class="zc-activity-button">进入活动</a>
+                                </li>
+                                <li>
+                                    <div class="zc-activity-name">小家电红六月</div>
+                                    <div class="zc-activity-times">2015/5/19~2015/7/31</div>
+                                    <a href="#" class="zc-activity-button">进入活动</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //活动 -->
+
+                <!-- 店铺 -->
+                <div class="zc-store-box" style="display:none;">
+                    <div class="zc-empty-box" style="display:none;">
+                        <p>亲，当前没有已关注的店铺~</p>
+                    </div>
+                    <div class="zc-scroll-bd">
+
+                        <ul class="zc-store-list" style="height:700px;">
+                            <li>
+                                <a href="#">
+                                    <span class="zc-store-name">爱国者北京专卖店</span>
+                                    <span class="zc-subtitle">官方授权 正品保障</span>
+                                    <span class="zc-button">进入店铺</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="zc-store-name">点沸数码专营店</span>
+                                    <span class="zc-subtitle">满100减10元</span>
+                                    <span class="zc-button">进入店铺</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="zc-store-name">鑫天下电子</span>
+                                    <span class="zc-subtitle">满100送精美礼品一份</span>
+                                    <span class="zc-button">进入店铺</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="zc-store-name">华晨数码旗舰店</span>
+                                    <span class="zc-subtitle">官方授权  正品保障</span>
+                                    <span class="zc-button">进入店铺</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="zc-store-name">万方宇笔记本旗舰店</span>
+                                    <span class="zc-subtitle">满1000减200</span>
+                                    <span class="zc-button">进入店铺</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="zc-store-name">华晨数码旗舰店</span>
+                                    <span class="zc-subtitle">官方授权  正品保障</span>
+                                    <span class="zc-button">进入店铺</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="zc-store-name">万方宇笔记本旗舰店</span>
+                                    <span class="zc-subtitle">满1000减200</span>
+                                    <span class="zc-button">进入店铺</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="zc-view-all"><a href="#"><span>查看全部</span>&gt;&gt;</a></div>
+                </div>
+                <!-- //店铺 -->
+            </div>
+        </div>
+        <!-- //我的关注 -->
+    </div>
+    <!-- //右侧切换层 -->
+
+    <!-- 清空浏览记录 -->
+    <div class="zc-layerbox-overlay" id="cover_screen"></div>
+    <div class="zc-layerbox" id="clear_confirm">
+        <div class="zc-title">清空浏览记录？</div>
+        <div class="zc-subtitle">确定后，您的浏览记录将被清空</div>
+        <div class="zc-btn clearfix">
+            <span class="ok">确定</span>
+            <span class="cancel">取消</span>
+        </div>
+    </div>
+    <!-- //清空浏览记录 -->  
+</div> 
+
+<script src="js/shopLoginLayer.js"></script>
+<script src="js/perfect-scrollbar.jquery.min.js"></script>
+<script src="js/side_toolbar.js"></script>
+<script src="js/side_toolbar_fun_v1.0.js"></script>
+<script>
+//侧边栏购物车数量 
+    function setCartNum(){
+        var url = "other/index.php?c=Ajax_ShopCart&a=GetCartNumber&callback=?&t="+Math.random();
+        $.getJSON(
+            url,
+            {},
+            function(data){
+                $("#cart-total").html(data.cartNumber);
+            }
+        );
+    }
+    setCartNum();
+</script>
+    
+        <script language="JavaScript" src="js/pv.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7daf617aaf843f0f55a422b00d7de1e7' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </body>
+</html>

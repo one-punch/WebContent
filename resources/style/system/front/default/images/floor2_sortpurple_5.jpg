@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>404错误 - 云南生态农业商城</title>
+<link href="http://ynstnysc.cn/resources/style/system/front/default/css/public.css" type="text/css" rel="stylesheet" />
+<link href="http://ynstnysc.cn/resources/style/system/front/default/css/index.css" type="text/css" rel="stylesheet" />
+<link href="http://ynstnysc.cn/resources/style/system/front/default/css/error.css" type="text/css" rel="stylesheet" />
+<script src="http://ynstnysc.cn/resources/js/jquery-1.6.2.js"></script>
+</head>
+<body>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script language="JavaScript" type="text/javascript">
+var browser=navigator.appName
+var b_version=navigator.appVersion
+var version=b_version.split(";");
+var trim_Version=version[1].replace(/[ ]/g,"");
+if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0")
+{
+	var b = window.confirm("亲，您的浏览器版本太低或不支持该站点的某些插件将会导致网站浏览不正常，请使用谷歌或其他高级浏览器浏览内容！,点击 “取消” 继续浏览网页内容。谢谢您的支持！"); 
+	if(b){
+		window.location.href="http://xiazai.sogou.com/detail/34/8/6262355089742005676.html?w=1927";
+	}
+}
+else if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0")
+{
+    var b = window.confirm("亲，您的浏览器版本太低或不支持该站点的某些插件将会导致网站浏览不正常，请使用谷歌或其他高级浏览器浏览内容！,点击 “取消” 继续浏览网页内容。谢谢您的支持！"); 
+	if(b){
+		window.location.href="http://xiazai.sogou.com/detail/34/8/6262355089742005676.html?w=1927";
+	}
+}else if (browser == "Microsoft Internet Explorer" && trim_Version == "MSIE6.0")
+{
+    var b = window.confirm("亲，您的浏览器版本太低或不支持该站点的某些插件将会导致网站浏览不正常，请使用谷歌或其他高级浏览器浏览内容！,点击 “取消” 继续浏览网页内容。谢谢您的支持！"); 
+	if(b){
+		window.location.href="http://xiazai.sogou.com/detail/34/8/6262355089742005676.html?w=1927";
+	} 
+}
+
+</script>
+
+
+<style>
+ #gwc:hover{
+	background-color: #4d4d4d;
+}
+#kfzx:hover{
+	background-color: #4d4d4d;
+}
+#gwc,#kfzx a{
+	color: #FFFFFF;
+}
+ </style>
+</head>
+<body>
+<div class="top">
+  <div class="page">
+    <div class="pageright" id="site-nav">
+      <ul class="quick-menu">
+        <li class="mytaobao menu-item menupx"  style="float: right;">
+          <div class="menu"> <a class="menu-hd" href="http://ynstnysc.cn/buyer/index.htm" rel="nofollow">买家中心<b></b></a>
+            <div class="menu-bd">
+              <div class="menu-bd-panel">
+                <div><a href="http://ynstnysc.cn/buyer/order.htm" rel="nofollow">已买到的宝贝</a><a href="http://ynstnysc.cn/buyer/index.htm?type=4"  rel="nofollow">店铺动态</a><a href="http://ynstnysc.cn/buyer/index.htm?type=2"  rel="nofollow">好友动态</a></div>
+              </div>
+            </div>
+          </div>
+        </li>
+		<li class="mytaobao menu-item menupx" style="float: right;">
+          <div class="menu"> <a class="menu-hd" href="http://ynstnysc.cn/seller/index.htm" rel="nofollow">卖家中心<b></b></a>
+            <div class="menu-bd">
+              <div class="menu-bd-panel">
+                <div> <a href="http://ynstnysc.cn/seller/order.htm"  rel="nofollow">已卖出的宝贝</a> <a href="http://ynstnysc.cn/seller/goods.htm" rel="nofollow">出售中的宝贝</a>
+                                 </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <script>
+		 var goods_count=0;
+		 var total_price=0;
+		 		 		function cart_remove(id,store_id){
+           jQuery.post("/remove_goods_cart.html",{"id":id,"store_id":store_id},function(data){
+           jQuery("div[class=table] tr[id="+id+"]").remove();
+		   jQuery(".shopping[id="+id+"]").remove();
+		   jQuery(".shopp_ingtop[id="+id+"]").remove();
+           jQuery("#cart_goods_count_top").html(data.count);
+           jQuery("#cart_goods_price_top").html(data.total_price);
+		   jQuery("#top_total_price_"+store_id).html(data.total_price);
+           if(store_id!=""){
+              jQuery("#total_price_"+store_id).html(data.sc_total_price);
+           }
+		   if( jQuery("form[id=cart_"+store_id+"]").find("tr[goods_list^=goods_info]").length==0){
+		  	 jQuery("form[id=cart_"+store_id+"]").remove();
+		   }
+           if(jQuery("tr[goods_list^=goods_info]").length==0){
+              jQuery(".car_nogoods").show();
+           }
+         },"json");
+       }
+	    jQuery(document).ready(function(){
+		   jQuery("#cart_goods_top_menu").mouseover(function(){
+			  jQuery.ajax({type:'POST',url:'/cart_menu_detail.htm',data:'',
+						   beforeSend:function(){
+							     jQuery("#cart_goods_top_info").empty().html('<div class="menu-bd-panel"><div style="text-align:center;"><img src="http://ynstnysc.cn/resources/style/common/images/loader.gif" /></div></div>');
+							     jQuery("#cart_goods_top_info").show();
+							   },
+						  success:function(data){
+							     jQuery("#cart_goods_top_info").empty();
+								 jQuery("#cart_goods_top_info").html(data);
+							   }
+						});
+		   });
+		   jQuery("#cart_menu").mouseleave(function(){
+			  jQuery("#cart_goods_top_info").hide();
+		   });
+		});
+	   </script>
+        <li class="search menu-item menupx">
+        	<!-- <a href="http://ynstnysc.cn/goods_cart1.htm">
+	          <div class="menu" id="cart_menu"><span class="menu-hd" id="cart_goods_top_menu"><s></s>购物车<span id="cart_goods_count_top">0</span>种商品<b></b></span>
+	            <div class="menu-bd" style="width: 137px;text-align: center;">id="cart_goods_top_info" 
+	             <div>
+	                <div style="text-align:center;"><img src="http://ynstnysc.cn/resources/style/common/images/loader.gif" /></div> 
+	               <a style="color: red;" href="http://ynstnysc.cn/goods_cart1.htm">查看购物车</a>
+	             </div>
+	              
+	            </div>
+	          </div>
+          </a> -->
+	            
+        </li>
+        <li class="menupx"   style="float: right;"><a href="http://ynstnysc.cn/buyer/message.htm">站内短信</a></li>
+		<li class="menupx"  style="float: right;"><a href="http://ynstnysc.cn/buyer/favorite_goods.htm">我的收藏</a></li>
+        		        <li class="menupx" style="background:none;"><a href="http://ynstnysc.cn/articlelist_help.htm">帮助中心</a></li>
+        		      </ul>
+    </div>
+    <div class="pageleft"><span>亲，欢迎来到云南生态农业商城！</span><span class="pxlr"><a href="http://ynstnysc.cn/user/login.htm" class="lightblue">登录</a></span><span class="pxlr">或</span><span class="pxlr"><a href="http://ynstnysc.cn/register.htm" class="lightblue">注册</a></span> </div>
+  </div>
+</div>
+
+ <!-- 右侧购物车 -->
+  <div style="position: fixed;right: 0px; background-color: #AAAAAB;opcity:0.5;width: 55px;height: 250px;z-index: 99;margin-right: 20px;text-align: center;color: #FFFFFF;bottom: 0px;top: 32%;">
+	<div id="kfzx" style="border-bottom: solid 2px #444851;padding-bottom: 8px;">
+		<a href="http://wpa.qq.com/msgrd?v=3&uin=512417905"><img style="width: 28px;height: 28px;margin-bottom: 8px;margin: 8px;"  src="http://ynstnysc.cn/resources/index/ioc/kefu.png" alt="在线客服"/></a>
+		<a href="http://wpa.qq.com/msgrd?v=3&uin=512417905">客服中心</a>
+	</div>
+	<a href="http://ynstnysc.cn/goods_cart1.htm">
+	<div id="gwc" style="height: 195px;">
+		<div><img style="width: 30px;height: 30px;margin-top: 8px;" src="http://ynstnysc.cn/resources/index/ioc/cart.png"/></div>
+		<div>购<br/>物<br/>车</div>
+		<div style="width: 28px;height: 28px;margin: auto;-moz-border-radius: 15px; -webkit-border-radius: 15px;border-radius:15px;"><span id="cart_goods_count_top">0</span></div>
+		<div>种<br/>商<br/>品</div>
+        
+	</div>
+	</a>
+</div>
+ <!-- 右侧购物车 结束-->
+ 
+</body>
+</html>
+<div class="main">
+  

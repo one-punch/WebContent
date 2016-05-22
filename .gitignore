@@ -1,0 +1,9 @@
+**/.DS_Store
+WEB-INF/classes/
+**/*.class
+upload/
+**/Cg-*.jpg
+**/hMk*.jpg
+**/Ch*.jpg
+**/Ch*.png
+

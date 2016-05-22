@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.header_banner{
+	width:100%;
+	max-width:1600px;
+	overflow:hidden;
+	margin:0 auto;
+	position:relative;
+	}
+.header_banner img{
+	width:100%;
+	}
+.header_banner img:hover{
+	filter:alpha(opacity=80); 
+	opacity:0.8;
+	}
+.xxx{
+	width:25px;
+	height:23px;
+	position:absolute;
+	right:10px;
+	bottom:10px;
+	background-image:url(../images/x.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	}	
+	
+	
+	
+	
+	
+	
+	
+
