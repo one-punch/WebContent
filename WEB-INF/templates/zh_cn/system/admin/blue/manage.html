@@ -51,7 +51,6 @@ jQuery(document).ready(function(){
         <li><a href="javascript:void(0);" class="home" id="common_operation_menu" onclick="openURL('show','common_operation')">首页</a></li>
         <li><a href="javascript:void(0);" class="active" id="base_set_menu" onclick="openURL('show','base_set')" >设置</a></li>
         <li><a href="javascript:void(0);" class="active" id="about_goods_menu" onclick="openURL('show','about_goods')">商品</a></li>
-        <li><a href="javascript:void(0);" class="active" id="about_sparegoods_menu" onclick="openURL('show','about_sparegoods')">闲置</a></li>
         <li><a href="javascript:void(0);" class="active" id="about_store_menu" onclick="openURL('show','about_store')">店铺</a></li>
         <li><a href="javascript:void(0);" class="active" id="about_member_menu" onclick="openURL('show','about_member')">会员</a></li>
         <li><a href="javascript:void(0);" class="active" id="about_trade_menu" onclick="openURL('show','about_trade')">交易</a></li>
@@ -69,7 +68,6 @@ jQuery(document).ready(function(){
         <div class="leftone">常用操作</div>
           <li><a class="this" id="welcome_op" href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/welcome.htm','main_workspace','welcome_op')">欢迎页面</a> 
           </li>         
-          <li><a id="aboutus_op" href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/aboutus.htm','main_workspace','aboutus_op')">关于我们</a></li>
           <li><a href="javascript:void(0);" id="set_site_op_q" onclick="openURL('url','$!webPath/admin/set_site.htm','main_workspace','set_site_op_q')">站点设置</a></li>
           <li><a href="javascript:void(0);" id="user_list_op_q" onclick="openURL('url','$!webPath/admin/user_list.htm','main_workspace','user_list_op_q')">会员管理</a></li>
           <li><a href="javascript:void(0);" id="store_list_op_q" onclick="openURL('url','$!webPath/admin/store_list.htm','main_workspace','store_list_op_q')">店铺管理</a></li>
@@ -114,12 +112,6 @@ jQuery(document).ready(function(){
           <li><a href="javascript:void(0);" id="goods_spec_op" onclick="openURL('url','$!webPath/admin/goods_spec_list.htm','main_workspace','goods_spec_op')">规格管理</a></li>
           <li><a href="javascript:void(0);" id="goods_floor_op" onclick="openURL('url','$!webPath/admin/goods_floor_list.htm','main_workspace','goods_floor_op')">首页楼层</a></li>
         </ul>
-        <ul class="ulleft" style="display:none;" id="about_sparegoods">
-          <div class="leftone">闲置相关</div>          
-          <li><a href="javascript:void(0);" class="this" id="sharegoodsclass_op" onclick="openURL('url','$!webPath/admin/sparegoods_class_list.htm','main_workspace','sharegoodsclass_op')">闲置分类</a> </li>          
-            <li><a href="javascript:void(0);" class="this" id="share_goods_op" onclick="openURL('url','$!webPath/admin/sparegoods_list.htm','main_workspace','share_goods_op')">闲置商品</a> </li>
-             <li><a href="javascript:void(0);" class="this" id="sparegoodsfloor_op" onclick="openURL('url','$!webPath/admin/sparegoodsfloor_list.htm','main_workspace','sparegoodsfloor_op')">闲置楼层</a> </li>
-        </ul>
         <ul class="ulleft" style="display:none;" id="about_store">
           <div class="leftone">店铺相关</div>
           <li><a href="javascript:void(0);" class="this" id="store_base_op" onclick="openURL('url','$!webPath/admin/store_base.htm','main_workspace','store_base_op')">卖家信用</a> </li>
@@ -160,7 +152,6 @@ jQuery(document).ready(function(){
           <li><a href="javascript:void(0);" class="this" id="articleClass_op" onclick="openURL('url','$!webPath/admin/articleclass_list.htm','main_workspace','articleClass_op');">文章分类</a> </li>
           <li><a href="javascript:void(0);" id="article_op" onclick="openURL('url','$!webPath/admin/article_list.htm','main_workspace','article_op');">文章管理</a></li>
           <li><a href="javascript:void(0);" id="document_op" onclick="openURL('url','$!webPath/admin/document_list.htm','main_workspace','document_op');">系统文章</a></li>
-          <li><a href="javascript:void(0);" id="partner_op" onclick="openURL('url','$!webPath/admin/partner_list.htm','main_workspace','partner_op');">合作伙伴</a></li>
           <li><a href="javascript:void(0);" id="nav_op" onclick="openURL('url','$!webPath/admin/navigation_list.htm','main_workspace','nav_op');">页面导航</a></li>
         </ul>
         <ul class="ulleft" style="display:none;" id="business_operation">
@@ -191,11 +182,6 @@ jQuery(document).ready(function(){
           <li><a href="javascript:void(0);" id="cache_list_op" onclick="openURL('url','$!webPath/admin/cache_list.htm','main_workspace','cache_list_op')">缓存管理</a></li>
           <li><a href="javascript:void(0);" id="database_add_op" onclick="openURL('url','$!webPath/admin/database_add.htm','main_workspace','database_add_op')">数据库管理</a></li>
           <li><a href="javascript:void(0);" id="lucene_op" onclick="openURL('url','$!webPath/admin/lucene.htm','main_workspace','lucene_op')">全文检索</a></li>
-          <li><a href="javascript:void(0);"id="complex_out_sys" suffix="out_system_"><img id="out_system_img" src="$!webPath/resources/style/system/manage/blue/images/contract.jpg" width="13" height="13" />外部系统</a> 
-           <ul id="out_system_info">
-              <li><a href="javascript:void(0);" id="ucenter_op" onclick="openURL('url','$!webPath/admin/ucenter.htm','main_workspace','ucenter_op')">UC整合</a></li>
-            </ul>
-          </li>
         </ul>
         <div class="statement" style="font-size:12px; font-family:Arial, Helvetica, sans-serif;">Powered By<a href="http://www.ehaowang.com" target="_blank"> <strong><span style="color:#DB0C0C;">XXSHOP</span></strong></a> <sup></sup>©2014 XXSHOP Inc.</div>
       </div>
@@ -292,7 +278,6 @@ jQuery(document).ready(function(){
     <a href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/articleclass_list.htm','main_workspace','articleClass_op','about_website');">文章分类</a>
     <a href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/article_list.htm','main_workspace','article_op','about_website');">文章管理</a>
     <a href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/document_list.htm','main_workspace','document_op','about_website');">系统文章</a>
-    <a href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/partner_list.htm','main_workspace','partner_op','about_website');">合作伙伴</a>
     <a href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/navigation_list.htm','main_workspace','nav_op','about_website');">页面导航</a>
     </span> 
     <span class="weblist_sp">
@@ -314,7 +299,7 @@ jQuery(document).ready(function(){
     <h5>工具</h5>
     <a href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/cache_list.htm','main_workspace','cache_list_op','sys_tool');">缓存管理</a>
     <a href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/database_add.htm','main_workspace','database_add_op','sys_tool');">数据库管理</a>
-    <a href="javascript:void(0);"  onclick="openURL('url','$!webPath/admin/lucene.htm','main_workspace','lucene_op','sys_tool')">全文检索</a>    <a href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/ucenter.htm','main_workspace','ucenter_op','base_set')">UC整合</a>
+    <a href="javascript:void(0);"  onclick="openURL('url','$!webPath/admin/lucene.htm','main_workspace','lucene_op','sys_tool')">全文检索</a>
  </span> 
   </div>
 </div>
