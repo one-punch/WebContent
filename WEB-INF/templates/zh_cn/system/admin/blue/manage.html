@@ -20,24 +20,6 @@
 <script>
 jQuery(document).ready(function(){
     pagestyle();
-	jQuery("a[id^=complex_]").click(function(){
-	  var suffix=jQuery(this).attr("suffix");
-	  if(jQuery("#"+suffix+"info").css("display")=="block"){
-	      jQuery("#"+suffix+"info").hide();
-		  jQuery("#"+suffix+"img").attr("src","$!webPath/resources/style/system/manage/blue/images/spread.jpg");
-	   }else{
-	      jQuery("#"+suffix+"info").show();
-		  jQuery("#"+suffix+"img").attr("src","$!webPath/resources/style/system/manage/blue/images/contract.jpg");	  
-	   }
-	});
-	jQuery(".webskin em a img").click(function(){
-	      var webcss = jQuery(this).attr("webcss");
-			jQuery.post("$!webPath/admin/set_websiteCss.htm",{
-						"webcss":webcss
-						},function(data){
-						window.location.href="$!webPath/admin/index.htm";	
-							},"text");
-		});
 });	
 </script>
 </head>
