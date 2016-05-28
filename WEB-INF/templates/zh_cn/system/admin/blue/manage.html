@@ -2,14 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>$!config.title - Powered by EHaowang</title>
+<title>$!config.title - Powered by Protchar</title>
 <meta name="keywords" content="$!config.keywords" />
 <meta name="description" content="$!config.description" />
-<meta name="generator" content="EHaowang" />
-<meta name="author" content="www.ehaowang.com">
-<meta name="copyright" content="中华易达 Inc. All Rights Reserved">
-<link href="$!webPath/resources/style/system/manage/$!{config.websiteCss}/template.css"  rel="stylesheet" type="text/css"/>
-<script src="$!webPath/resources/js/jquery-1.6.2.js"></script>
+<meta name="generator" content="Protchar" />
+<meta name="author" content="protchar.cn">
+<meta name="copyright" content="Protchar Inc. All Rights Reserved">
+
+<link href="$!webPath/resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="$!webPath/resources/css/metisMenu.min.css" rel="stylesheet">
+<link href="$!webPath/resources/css/admin/sb-admin-2.css" rel="stylesheet">
+<link href="$!webPath/resources/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="$!webPath/resources/css/admin/custom.css"  rel="stylesheet" type="text/css"/>
+
+<script src="$!webPath/resources/js/jquery.min.js"></script>
 <script src="$!webPath/resources/js/jquery.shop.base.js"></script>
 <script>
 jQuery(document).ready(function(){
@@ -35,140 +41,161 @@ jQuery(document).ready(function(){
 });	
 </script>
 </head>
-<body scroll="yes">
-<div class="main">
-  <div class="top">
-    <div class="login">您登录的身份是：$!{user.userName} &nbsp;&nbsp;| <a href="$!webPath/admin/logout.htm" target="_self">安全退出</a>|<a href="$!webPath/admin/admin_pws.htm" target="main_workspace">修改密码</a>| <a href="$!webPath/index.htm" target="_blank">商城首页</a></div>
-    <div class="logo"></div>
-    <div class="nav">
-      <ul>
-        <li><a href="javascript:void(0);" class="home" id="common_operation_menu" onclick="openURL('show','common_operation')">首页</a></li>
-        <li><a href="javascript:void(0);" class="active" id="base_set_menu" onclick="openURL('show','base_set')" >设置</a></li>
-        <li><a href="javascript:void(0);" class="active" id="about_goods_menu" onclick="openURL('show','about_goods')">商品</a></li>
-        <li><a href="javascript:void(0);" class="active" id="about_store_menu" onclick="openURL('show','about_store')">店铺</a></li>
-        <li><a href="javascript:void(0);" class="active" id="about_member_menu" onclick="openURL('show','about_member')">会员</a></li>
-        <li><a href="javascript:void(0);" class="active" id="about_trade_menu" onclick="openURL('show','about_trade')">交易</a></li>
-        <li><a href="javascript:void(0);" class="active" id="about_website_menu" onclick="openURL('show','about_website')">网站</a></li>
-        <li><a href="javascript:void(0);" class="active" id="business_operation_menu" onclick="openURL('show','business_operation')">运营</a></li>
-         <li><a href="javascript:void(0);" class="active" id="sys_tool_menu" onclick="openURL('show','sys_tool')">工具</a></li>
-      </ul>
+<body>
+<div class="wrapper">
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.htm">$!config.title</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+        	<li>欢迎您：$!{user.userName}</li>
+        	<li><a href="$!webPath/admin/logout.htm" target="_self">安全退出</a></li>
+        	<li><a href="$!webPath/admin/admin_pws.htm" target="main_workspace">修改密码</a></li>
+        	<li><a href="$!webPath/index.htm" target="_blank">商城首页</a></li>
+        </ul>
+    </nav>
+    
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav in" id="side-menu">
+                <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> 常用操作<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                    	<li><a class="this" id="welcome_op" href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/welcome.htm','main_workspace','welcome_op')">欢迎页面</a></li>         
+						<li><a href="javascript:void(0);" id="set_site_op_q" onclick="openURL('url','$!webPath/admin/set_site.htm','main_workspace','set_site_op_q')">站点设置</a></li>
+						<li><a href="javascript:void(0);" id="user_list_op_q" onclick="openURL('url','$!webPath/admin/user_list.htm','main_workspace','user_list_op_q')">会员管理</a></li>
+						<li><a href="javascript:void(0);" id="store_list_op_q" onclick="openURL('url','$!webPath/admin/store_list.htm','main_workspace','store_list_op_q')">店铺管理</a></li>
+						<li><a href="javascript:void(0);" id="goods_manage_op_q" onclick="openURL('url','$!webPath/admin/goods_list.htm','main_workspace','goods_manage_op_q')">商品管理</a></li>
+						<li><a href="javascript:void(0);" id="order_list_op_q" onclick="openURL('url','$!webPath/admin/order_list.htm','main_workspace','order_list_op_q')">订单管理</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> 基本设置<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+			          <li><a href="javascript:void(0);" id="set_site_op" class="this" onclick="openURL('url','$!webPath/admin/set_site.htm','main_workspace','set_site_op')">站点设置</a></li>
+			          <li><a href="javascript:void(0);" id="set_image_op" onclick="openURL('url','$!webPath/admin/set_image.htm','main_workspace','set_image_op')">上传设置</a></li>
+			          <li><a href="javascript:void(0);" id="set_email_op" onclick="openURL('url','$!webPath/admin/set_email.htm','main_workspace','set_email_op')">Email设置</a></li>
+			          <li><a href="javascript:void(0);" id="set_sms_op" onclick="openURL('url','$!webPath/admin/set_sms.htm','main_workspace','set_sms_op')">短信设置</a></li>
+			          <li><a href="javascript:void(0);" id="set_second_domain_op" class="this" onclick="openURL('url','$!webPath/admin/set_second_domain.htm','main_workspace','set_second_domain_op')">二级域名</a></li>
+			           <li><a href="javascript:void(0);" id="template_list_op" onclick="openURL('url','$!webPath/admin/template_list.htm','main_workspace','template_list_op')">通知模板</a></li>
+			          <li><a href="javascript:void(0);" id="admin_list_op" onclick="openURL('url','$!webPath/admin/admin_list.htm','main_workspace','admin_list_op')">管理员管理</a></li>
+			          <li>
+	                      <a href="#">地区管理 <span class="fa arrow"></span></a>
+	                      <ul class="nav nav-third-level collapse">
+	                      	<li><a id="arealist_op" href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/area_list.htm','main_workspace','arealist_op')">常用地区</a></li>
+			              	<li><a href="javascript:void(0);" id="trans_area_op" onclick="openURL('url','$!webPath/admin/trans_area_list.htm','main_workspace','trans_area_op')">运费区域</a></li>
+	                      </ul>
+	                  </li>
+	                  <li>
+	                      <a href="#">支付管理 <span class="fa arrow"></span></a>
+	                      <ul class="nav nav-third-level collapse">
+	                      	<li><a href="javascript:void(0);" id="payment_list_op" onclick="openURL('url','$!webPath/admin/payment_list.htm','main_workspace','payment_list_op')">支付方式</a></li>
+			              <li><a href="javascript:void(0);" id="fenrun_list_op" onclick="openURL('url','$!webPath/admin/set_fenrun.htm','main_workspace','fenrun_list_op')">分润管理</a></li>
+	                      </ul>
+	                  </li>
+			        </ul>
+				</li>
+			    <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> 商品相关<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+			          <li><a href="javascript:void(0);" class="this" id="goods_class_op" onclick="openURL('url','$!webPath/admin/goods_class_list.htm','main_workspace','goods_class_op')">分类管理</a> </li>
+			          <li><a href="javascript:void(0);" id="goods_brand_op" onclick="openURL('url','$!webPath/admin/goods_brand_list.htm','main_workspace','goods_brand_op')">品牌管理</a></li>
+			          <li><a href="javascript:void(0);" id="goods_manage_op" onclick="openURL('url','$!webPath/admin/goods_list.htm','main_workspace','goods_manage_op')">商品管理</a></li>
+			          <li><a href="javascript:void(0);" id="goods_type_op" onclick="openURL('url','$!webPath/admin/goods_type_list.htm','main_workspace','goods_type_op')">类型管理</a></li>
+			          <li><a href="javascript:void(0);" id="goods_spec_op" onclick="openURL('url','$!webPath/admin/goods_spec_list.htm','main_workspace','goods_spec_op')">规格管理</a></li>
+			          <li><a href="javascript:void(0);" id="goods_floor_op" onclick="openURL('url','$!webPath/admin/goods_floor_list.htm','main_workspace','goods_floor_op')">首页楼层</a></li>
+			        </ul>
+				</li>
+			    <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> 店铺相关<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+			          <li><a href="javascript:void(0);" class="this" id="store_base_op" onclick="openURL('url','$!webPath/admin/store_base.htm','main_workspace','store_base_op')">卖家信用</a> </li>
+			          <li><a href="javascript:void(0);" id="store_manage_op" onclick="openURL('url','$!webPath/admin/store_list.htm','main_workspace','store_manage_op')">店铺管理</a></li>
+			          <li><a href="javascript:void(0);" id="store_template_op" onclick="openURL('url','$!webPath/admin/store_template.htm','main_workspace','store_template_op')">店铺模板</a></li>
+			          <li><a href="javascript:void(0);" id="store_grade_op" onclick="openURL('url','$!webPath/admin/storegrade_list.htm','main_workspace','store_grade_op')">店铺等级</a></li>
+			          <li><a href="javascript:void(0);" id="store_class_op" onclick="openURL('url','$!webPath/admin/storeclass_list.htm','main_workspace','store_class_op')">店铺分类</a></li>
+			        </ul>
+				</li>
+			    <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> 会员相关<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+			          <li><a href="javascript:void(0);" class="this" id="member_manage_op" onclick="openURL('url','$!webPath/admin/user_list.htm','main_workspace','member_manage_op')">会员管理</a> </li>
+			          <li><a href="javascript:void(0);" class="this" id="user_creditrule_op" onclick="openURL('url','$!webPath/admin/user_creditrule.htm','main_workspace','user_creditrule_op')">会员信用</a> </li>
+			          <li><a href="javascript:void(0);" id="user_msg_op" onclick="openURL('url','$!webPath/admin/user_msg.htm','main_workspace','user_msg_op')">会员通知</a></li>
+			          <li><a href="javascript:void(0);" id="user_integral_op" onclick="openURL('url','$!webPath/admin/user_integral.htm','main_workspace','user_integral_op')">积分管理</a></li>
+			          <li><a href="javascript:void(0);" id="integrallog_list_op" onclick="openURL('url','$!webPath/admin/integrallog_list.htm','main_workspace','integrallog_list_op')">积分明细</a></li>
+			          <li><a href="javascript:void(0);" id="predeposit_list_op" onclick="openURL('url','$!webPath/admin/predeposit_list.htm','main_workspace','predeposit_list_op')">预存款管理</a></li>
+			          <li><a href="javascript:void(0);" id="predepositlog_list_op" onclick="openURL('url','$!webPath/admin/predepositlog_list.htm','main_workspace','predepositlog_list_op')">预存款明细</a></li>
+                      <li><a href="javascript:void(0);" id="img_op" onclick="openURL('url','$!webPath/admin/user_photo_list.htm','main_workspace','img_op')">图片管理</a></li> 
+			          <li>
+	                      <a href="#">SNS管理 <span class="fa arrow"></span></a>
+	                      <ul class="nav nav-third-level collapse">
+	                      	<li><a id="user_sns_op" href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/sns_user.htm','main_workspace','user_sns_op')">会员动态</a></li>
+			              	<li><a href="javascript:void(0);" id="store_sns_op" onclick="openURL('url','$!webPath/admin/sns_store.htm','main_workspace','store_sns_op')">店铺动态</a></li>
+	                      </ul>
+	                  </li>
+			        </ul>
+				</li>
+			    <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> 交易管理<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+			          <li><a href="javascript:void(0);" class="this" id="order_manage_op" onclick="openURL('url','$!webPath/admin/order_list.htm','main_workspace','order_manage_op')">订单管理</a> </li>
+			          <li><a href="javascript:void(0);" id="set_order_confirm_op" onclick="openURL('url','$!webPath/admin/set_order_confirm.htm','main_workspace','set_order_confirm_op')">订单设置</a> </li>
+			          <li><a href="javascript:void(0);"  id="evaluate_manage_op" onclick="openURL('url','$!webPath/admin/evaluate_list.htm','main_workspace','evaluate_manage_op')">商品评价</a></li>
+			        </ul>
+				</li>
+			    <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> 网站相关<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+			          <li><a href="javascript:void(0);" class="this" id="articleClass_op" onclick="openURL('url','$!webPath/admin/articleclass_list.htm','main_workspace','articleClass_op');">文章分类</a> </li>
+			          <li><a href="javascript:void(0);" id="article_op" onclick="openURL('url','$!webPath/admin/article_list.htm','main_workspace','article_op');">文章管理</a></li>
+			          <li><a href="javascript:void(0);" id="document_op" onclick="openURL('url','$!webPath/admin/document_list.htm','main_workspace','document_op');">系统文章</a></li>
+			          <li><a href="javascript:void(0);" id="nav_op" onclick="openURL('url','$!webPath/admin/navigation_list.htm','main_workspace','nav_op');">页面导航</a></li>
+			        </ul>
+				</li>
+			    <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> 运营管理<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+			          <li><a href="javascript:void(0);" class="this" id="operation_base_op" onclick="openURL('url','$!webPath/admin/operation_base_set.htm','main_workspace','operation_base_op')">基本设置</a> </li>
+			          <li><a href="javascript:void(0);" id="gold_record_op" onclick="openURL('url','$!webPath/admin/gold_record.htm','main_workspace','gold_record_op')">金币管理</a></li>
+			          <li><a href="javascript:void(0);" id="ztc_set" onclick="openURL('url','$!webPath/admin/ztc_set.htm','main_workspace','ztc_set')">竞价直通车</a></li>
+			          <li><a href="javascript:void(0);" id="coupon_set_op" onclick="openURL('url','$!webPath/admin/coupon_list.htm','main_workspace','coupon_set_op')">优惠券管理</a></li>
+			          <li><a href="javascript:void(0);" id="advert_set_op" onclick="openURL('url','$!webPath/admin/advert_list.htm','main_workspace','advert_set_op')">广告管理</a></li>
+			          <li>
+	                      <a href="#">积分中心 <span class="fa arrow"></span></a>
+	                      <ul class="nav nav-third-level collapse">
+	                      	<li><a href="javascript:void(0);" id="integral_rule_op" onclick="openURL('url','$!webPath/admin/operation_integral_rule.htm','main_workspace','integral_rule_op')">积分规则</a></li>
+			              	<li><a href="javascript:void(0);" id="integral_shop_op" onclick="openURL('url','$!webPath/admin/integral_goods.htm','main_workspace','integral_shop_op')">积分商城</a></li>
+	                      </ul>
+	                  </li>
+			        </ul>
+				</li>
+			    <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> 系统工具<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+			          <li><a href="javascript:void(0);" id="cache_list_op" onclick="openURL('url','$!webPath/admin/cache_list.htm','main_workspace','cache_list_op')">缓存管理</a></li>
+			          <li><a href="javascript:void(0);" id="database_add_op" onclick="openURL('url','$!webPath/admin/database_add.htm','main_workspace','database_add_op')">数据库管理</a></li>
+			          <li><a href="javascript:void(0);" id="lucene_op" onclick="openURL('url','$!webPath/admin/lucene.htm','main_workspace','lucene_op')">全文检索</a></li>
+			        </ul>
+				</li>
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
     </div>
-  </div>
-  <div class="index" id="workspace">
-    <div class="left">
-      <div class="lefttop"> </div>
-      <div class="left_ul">
-        <ul class="ulleft" id="common_operation">
-        <div class="leftone">常用操作</div>
-          <li><a class="this" id="welcome_op" href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/welcome.htm','main_workspace','welcome_op')">欢迎页面</a> 
-          </li>         
-          <li><a href="javascript:void(0);" id="set_site_op_q" onclick="openURL('url','$!webPath/admin/set_site.htm','main_workspace','set_site_op_q')">站点设置</a></li>
-          <li><a href="javascript:void(0);" id="user_list_op_q" onclick="openURL('url','$!webPath/admin/user_list.htm','main_workspace','user_list_op_q')">会员管理</a></li>
-          <li><a href="javascript:void(0);" id="store_list_op_q" onclick="openURL('url','$!webPath/admin/store_list.htm','main_workspace','store_list_op_q')">店铺管理</a></li>
-          <li><a href="javascript:void(0);" id="goods_manage_op_q" onclick="openURL('url','$!webPath/admin/goods_list.htm','main_workspace','goods_manage_op_q')">商品管理</a></li>
-          <li><a href="javascript:void(0);" id="order_list_op_q" onclick="openURL('url','$!webPath/admin/order_list.htm','main_workspace','order_list_op_q')">订单管理</a></li>
-        </ul>
-        <ul class="ulleft" id="base_set" style="display:none;">
-          <div class="leftone">基本设置</div>
-          <li><a href="javascript:void(0);" id="set_site_op" class="this" onclick="openURL('url','$!webPath/admin/set_site.htm','main_workspace','set_site_op')">站点设置</a></li>
-          <li><a href="javascript:void(0);" id="set_image_op" onclick="openURL('url','$!webPath/admin/set_image.htm','main_workspace','set_image_op')">上传设置</a></li>
-          <li><a href="javascript:void(0);" id="set_email_op" onclick="openURL('url','$!webPath/admin/set_email.htm','main_workspace','set_email_op')">Email设置</a></li>
-          <li><a href="javascript:void(0);" id="set_sms_op" onclick="openURL('url','$!webPath/admin/set_sms.htm','main_workspace','set_sms_op')">短信设置</a></li>
-          <li><a href="javascript:void(0);" id="set_second_domain_op" class="this" onclick="openURL('url','$!webPath/admin/set_second_domain.htm','main_workspace','set_second_domain_op')">二级域名</a></li>
-           <li><a href="javascript:void(0);" id="template_list_op" onclick="openURL('url','$!webPath/admin/template_list.htm','main_workspace','template_list_op')">通知模板</a></li>
-          <li><a href="javascript:void(0);" id="admin_list_op" onclick="openURL('url','$!webPath/admin/admin_list.htm','main_workspace','admin_list_op')">管理员管理</a></li>
-          <li><a href="javascript:void(0);"id="complex_trans" suffix="trans_"><img id="trans_img" src="$!webPath/resources/style/system/manage/blue/images/contract.jpg" width="13" height="13" />地区管理</a> 
-           <ul id="trans_info">
-              <li><a id="arealist_op" href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/area_list.htm','main_workspace','arealist_op')">常用地区</a></li>
-              <li><a href="javascript:void(0);" id="trans_area_op" onclick="openURL('url','$!webPath/admin/trans_area_list.htm','main_workspace','trans_area_op')">运费区域</a></li>
-            </ul>
-          </li>
-          <li><a href="javascript:void(0);"id="complex_payment" suffix="payment_"><img id="payment_img" src="$!webPath/resources/style/system/manage/blue/images/contract.jpg" width="13" height="13" />支付管理</a> 
-           <ul id="payment_info">
-              <li><a href="javascript:void(0);" id="payment_list_op" onclick="openURL('url','$!webPath/admin/payment_list.htm','main_workspace','payment_list_op')">支付方式</a></li>
-              <li><a href="javascript:void(0);" id="fenrun_list_op" onclick="openURL('url','$!webPath/admin/set_fenrun.htm','main_workspace','fenrun_list_op')">分润管理</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="ulleft" style="display:none;" id="about_goods">
-          <div class="leftone">商品相关</div>
-          <li><a href="javascript:void(0);" class="this" id="goods_class_op" onclick="openURL('url','$!webPath/admin/goods_class_list.htm','main_workspace','goods_class_op')">分类管理</a> </li>
-          <li><a href="javascript:void(0);" id="goods_brand_op" onclick="openURL('url','$!webPath/admin/goods_brand_list.htm','main_workspace','goods_brand_op')">品牌管理</a></li>
-          <li><a href="javascript:void(0);" id="goods_manage_op" onclick="openURL('url','$!webPath/admin/goods_list.htm','main_workspace','goods_manage_op')">商品管理</a></li>
-          <li><a href="javascript:void(0);" id="goods_type_op" onclick="openURL('url','$!webPath/admin/goods_type_list.htm','main_workspace','goods_type_op')">类型管理</a></li>
-          <li><a href="javascript:void(0);" id="goods_spec_op" onclick="openURL('url','$!webPath/admin/goods_spec_list.htm','main_workspace','goods_spec_op')">规格管理</a></li>
-          <li><a href="javascript:void(0);" id="goods_floor_op" onclick="openURL('url','$!webPath/admin/goods_floor_list.htm','main_workspace','goods_floor_op')">首页楼层</a></li>
-        </ul>
-        <ul class="ulleft" style="display:none;" id="about_store">
-          <div class="leftone">店铺相关</div>
-          <li><a href="javascript:void(0);" class="this" id="store_base_op" onclick="openURL('url','$!webPath/admin/store_base.htm','main_workspace','store_base_op')">卖家信用</a> </li>
-          <li><a href="javascript:void(0);" id="store_manage_op" onclick="openURL('url','$!webPath/admin/store_list.htm','main_workspace','store_manage_op')">店铺管理</a></li>
-          <li><a href="javascript:void(0);" id="store_template_op" onclick="openURL('url','$!webPath/admin/store_template.htm','main_workspace','store_template_op')">店铺模板</a></li>
-          <li><a href="javascript:void(0);" id="store_grade_op" onclick="openURL('url','$!webPath/admin/storegrade_list.htm','main_workspace','store_grade_op')">店铺等级</a></li>
-          <li><a href="javascript:void(0);" id="store_class_op" onclick="openURL('url','$!webPath/admin/storeclass_list.htm','main_workspace','store_class_op')">店铺分类</a></li>
-        </ul>
-        <ul class="ulleft" style="display:none;" id="about_member">
-          <div class="leftone">会员相关</div>
-          <li><a href="javascript:void(0);" class="this" id="member_manage_op" onclick="openURL('url','$!webPath/admin/user_list.htm','main_workspace','member_manage_op')">会员管理</a> </li>
-          <li><a href="javascript:void(0);" class="this" id="user_creditrule_op" onclick="openURL('url','$!webPath/admin/user_creditrule.htm','main_workspace','user_creditrule_op')">会员信用</a> </li>
-          <li><a href="javascript:void(0);" id="user_msg_op" onclick="openURL('url','$!webPath/admin/user_msg.htm','main_workspace','user_msg_op')">会员通知</a></li>
-          <li><a href="javascript:void(0);" id="user_integral_op" onclick="openURL('url','$!webPath/admin/user_integral.htm','main_workspace','user_integral_op')">积分管理</a></li>
-          <li><a href="javascript:void(0);" id="integrallog_list_op" onclick="openURL('url','$!webPath/admin/integrallog_list.htm','main_workspace','integrallog_list_op')">积分明细</a></li>
-          <li><a href="javascript:void(0);" id="predeposit_list_op" onclick="openURL('url','$!webPath/admin/predeposit_list.htm','main_workspace','predeposit_list_op')">预存款管理</a></li>
-          <li><a href="javascript:void(0);" id="predepositlog_list_op" onclick="openURL('url','$!webPath/admin/predepositlog_list.htm','main_workspace','predepositlog_list_op')">预存款明细</a></li>
-                     <li><a href="javascript:void(0);" id="img_op" onclick="openURL('url','$!webPath/admin/user_photo_list.htm','main_workspace','img_op')">图片管理</a></li> 
-          <li><a href="javascript:void(0);"id="complex_sns" suffix="sns_"><img id="sns_img" src="$!webPath/resources/style/system/manage/blue/images/contract.jpg" width="13" height="13" />SNS管理</a> 
-           <ul id="sns_info">
-              <li><a id="user_sns_op" href="javascript:void(0);" onclick="openURL('url','$!webPath/admin/sns_user.htm','main_workspace','user_sns_op')">会员动态</a></li>
-              <li><a href="javascript:void(0);" id="store_sns_op" onclick="openURL('url','$!webPath/admin/sns_store.htm','main_workspace','store_sns_op')">店铺动态</a></li>
-            </ul>
-          </li>
-         
-        </ul>
-        <ul class="ulleft" style="display:none;" id="about_trade">
-          <div class="leftone">交易管理</div>
-          <li><a href="javascript:void(0);" class="this" id="order_manage_op" onclick="openURL('url','$!webPath/admin/order_list.htm','main_workspace','order_manage_op')">订单管理</a> </li>
-          <li><a href="javascript:void(0);" id="set_order_confirm_op" onclick="openURL('url','$!webPath/admin/set_order_confirm.htm','main_workspace','set_order_confirm_op')">订单设置</a> </li>
-          <li><a href="javascript:void(0);"  id="evaluate_manage_op" onclick="openURL('url','$!webPath/admin/evaluate_list.htm','main_workspace','evaluate_manage_op')">商品评价</a></li>
-        </ul>
-        <ul class="ulleft" style="display:none;" id="about_website">
-          <div class="leftone">网站相关</div>
-          <li><a href="javascript:void(0);" class="this" id="articleClass_op" onclick="openURL('url','$!webPath/admin/articleclass_list.htm','main_workspace','articleClass_op');">文章分类</a> </li>
-          <li><a href="javascript:void(0);" id="article_op" onclick="openURL('url','$!webPath/admin/article_list.htm','main_workspace','article_op');">文章管理</a></li>
-          <li><a href="javascript:void(0);" id="document_op" onclick="openURL('url','$!webPath/admin/document_list.htm','main_workspace','document_op');">系统文章</a></li>
-          <li><a href="javascript:void(0);" id="nav_op" onclick="openURL('url','$!webPath/admin/navigation_list.htm','main_workspace','nav_op');">页面导航</a></li>
-        </ul>
-        <ul class="ulleft" style="display:none;" id="business_operation">
-          <div class="leftone">运营管理</div>
-          <li><a href="javascript:void(0);" class="this" id="operation_base_op" onclick="openURL('url','$!webPath/admin/operation_base_set.htm','main_workspace','operation_base_op')">基本设置</a> </li>
-          <li><a href="javascript:void(0);" id="gold_record_op" onclick="openURL('url','$!webPath/admin/gold_record.htm','main_workspace','gold_record_op')">金币管理</a></li>
-          <li><a href="javascript:void(0);" id="ztc_set" onclick="openURL('url','$!webPath/admin/ztc_set.htm','main_workspace','ztc_set')">竞价直通车</a></li>
-          <li><a href="javascript:void(0);" id="coupon_set_op" onclick="openURL('url','$!webPath/admin/coupon_list.htm','main_workspace','coupon_set_op')">优惠券管理</a></li>
-          <li><a href="javascript:void(0);" id="advert_set_op" onclick="openURL('url','$!webPath/admin/advert_list.htm','main_workspace','advert_set_op')">广告管理</a></li>
-          <li><a href="javascript:void(0);" id="complex_integral" suffix="integral_center_"><img id="integral_center_img" src="$!webPath/resources/style/system/manage/blue/images/contract.jpg" width="13" height="13" />积分中心</a>
-          <ul id="integral_center_info">
-               <li><a href="javascript:void(0);" id="integral_rule_op" onclick="openURL('url','$!webPath/admin/operation_integral_rule.htm','main_workspace','integral_rule_op')">积分规则</a></li>
-              <li><a href="javascript:void(0);" id="integral_shop_op" onclick="openURL('url','$!webPath/admin/integral_goods.htm','main_workspace','integral_shop_op')">积分商城</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="ulleft" style="display:none;" id="sys_tool">
-          <div class="leftone">系统工具</div>
-          <li><a href="javascript:void(0);" id="cache_list_op" onclick="openURL('url','$!webPath/admin/cache_list.htm','main_workspace','cache_list_op')">缓存管理</a></li>
-          <li><a href="javascript:void(0);" id="database_add_op" onclick="openURL('url','$!webPath/admin/database_add.htm','main_workspace','database_add_op')">数据库管理</a></li>
-          <li><a href="javascript:void(0);" id="lucene_op" onclick="openURL('url','$!webPath/admin/lucene.htm','main_workspace','lucene_op')">全文检索</a></li>
-        </ul>
-        <div class="statement" style="font-size:12px; font-family:Arial, Helvetica, sans-serif;">Powered By<a href="http://www.ehaowang.com" target="_blank"> <strong><span style="color:#DB0C0C;">XXSHOP</span></strong></a> <sup></sup>©2014 XXSHOP Inc.</div>
-      </div>
-    </div>
-    <div class="content">
-    <div class="navbar">
-      <div style="line-height:36px;">您的位置：控制台><span id="top_nav_info">站点设置</span></div>
-      </div>
-      <iframe id="main_workspace" name="main_workspace" src="$!webPath/admin/welcome.htm" style="overflow:auto;height:550px" frameborder="0" width="100%" height="100%" scrolling="yes" onload="window.parent"></iframe>
-    </div>
-  </div>
+    
+	<div id="page-wrapper">
+	    <div class="container-fluid">
+	<div class="content">
+		<iframe id="main_workspace" name="main_workspace" src="$!webPath/admin/welcome.htm" style="overflow:auto;height:550px" frameborder="0" width="100%" height="100%" scrolling="yes" onload="window.parent"></iframe>
+	</div>
+	    </div>
+	    <!-- /.container-fluid -->
+	</div>
 </div>
 $!uc_login_js
+<script src="$!webPath/resources/js/bootstrap.min.js"></script>
+<script src="$!webPath/resources/js/metisMenu.min.js"></script>
+<script src="$!webPath/resources/js/admin/sb-admin-2.js"></script>
+<script src="$!webPath/resources/js/admin/custom.js"></script>
 </body>
 </html>
