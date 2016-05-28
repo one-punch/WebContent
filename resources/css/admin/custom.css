@@ -1,0 +1,5 @@
+@charset "utf-8";
+/* CSS Document */
+.index .left{ background-color:#f8f8f8; border-color:#e7e7e7; }
+.index .left .left_ul{ background-color:#f8f8f8;padding-top:0; }
+.index .left .left_ul .ulleft{ padding-bottom:0; }
