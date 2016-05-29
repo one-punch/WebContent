@@ -1,15 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 #parse("/WEB-INF/templates/partials/admin/head.html")
-  <body>
+  <body class="seller_body">
     <div class="wrapper">
-      #parse("/WEB-INF/templates/partials/admin/navbar.html")
-      #parse("/WEB-INF/templates/partials/admin/sidebar.html")
+      #parse("/WEB-INF/templates/partials/seller/navbar.html")
+      #parse("/WEB-INF/templates/partials/seller/sidebar.html")
       <div id="page-wrapper">
         $screen_content
       </div>
     </div>
-  $!uc_login_js
   #parse("/WEB-INF/templates/partials/admin/foot.html")
   </body>
 </html>
