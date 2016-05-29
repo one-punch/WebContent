@@ -14,38 +14,7 @@
 
 <script src="$!webPath/resources/js/jquery.min.js"></script>
 <script src="$!webPath/resources/js/jquery.shop.base.js"></script>
-<script>
-jQuery(document).ready(function(){
-  #if($!{store.point.description_evaluate}>0)
-  jQuery(":radio.description_evaluate").each(function(){
-    var description_evaluate=$!{store.point.description_evaluate};
-  if(jQuery(this).val()>=description_evaluate){
-    jQuery(this).attr("checked","checked");
-    return false;
-  }
-  });
-  #end
-  jQuery("input.description_evaluate").rating();
-   #if($!{store.point.service_evaluate}>0)
-  jQuery(":radio.service_evaluate").each(function(){
-    var service_evaluate=$!{store.point.service_evaluate};
-  if(jQuery(this).val()>=service_evaluate){
-    jQuery(this).attr("checked","checked");
-    return false;
-  }
-  });
-  #end
-  jQuery("input.service_evaluate").rating();
-  #if($!{store.point.ship_evaluate}>0)
-  jQuery(":radio.ship_evaluate").each(function(){
-    var ship_evaluate=$!{store.point.ship_evaluate};
-  if(jQuery(this).val()>=ship_evaluate){
-    jQuery(this).attr("checked","checked");
-    return false;
-  }
-  });
-  #end
-  jQuery("input.ship_evaluate").rating();
-});
-</script>
+<script src="$!webPath/resources/js/jquery.shop.common.js"></script>
+<script src="$!webPath/resources/js/jquery.validate.min.js"></script>
+
 </head>
