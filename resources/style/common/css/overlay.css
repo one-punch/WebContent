@@ -36,6 +36,7 @@
 	background:url(../images/close.jpg) no-repeat center right; width:14px; height:14px;
 	float:right;
 	right:15px;
+	margin-top: 50%;
 	top:10px;
 	display:block;
 	position:absolute;
@@ -43,6 +44,7 @@
 }
 .white_box {
 	width:98%;
+	margin-top: 45%;
 	background:#fff;
 	margin-left:auto;
 	margin-right:auto;
