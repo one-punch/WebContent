@@ -1,9 +1,2 @@
 #set($layout = "/WEB-INF/templates/layout/admin.html")
-<script type="text/javascript">
-  $(function(){
-    debugger
-    $("#main_workspace").attr("style", "overflow:auto;height:"+$('#page-wrapper').height()+"px")
-  })
-</script>
-
-<iframe id="main_workspace" name="main_workspace" src="$!webPath/admin/welcome.htm" frameborder="0" width="100%" height="100%" scrolling="yes" onload="window.parent"></iframe>
+<iframe id="main_workspace" name="main_workspace" src="$!webPath/admin/welcome.htm" frameborder="0" width="100%" height="100%" scrolling="yes" onload="this.height=main_workspace.document.body.scrollHeight" ></iframe>
