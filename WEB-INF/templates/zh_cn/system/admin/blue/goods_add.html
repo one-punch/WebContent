@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="$!webPath/resources/style/system/manage/$!{config.websiteCss}/template.css"  rel="stylesheet" type="text/css"/>
+    <link href="$!webPath/resources/css/bootstrap.min.css" rel="stylesheet">
+    <script src="$!webPath/resources/js/jquery-1.6.2.js"></script>
+    <script src="$!webPath/resources/js/jquery.validate.min.js"></script>
+  <body>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            新增商品
+          </div>
+          <div class="panel-body">
+            <form role="form" action="$!webPath/admin/goods_save.htm" method="post">
+              <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>goods_name</label>
+                      <input class="form-control" name="goods_name" placeholder="Enter text">
+                    </div>
+                    <div class="form-group">
+                      <label>goods_price</label>
+                      <input class="form-control" name="goods_price" placeholder="Enter text">
+                    </div>
+                    <div class="form-group">
+                      <label>value</label>
+                      <input class="form-control" name="value" placeholder="Enter value">
+                    </div>
+                </div>
+                <!-- /.col-lg-6 (nested) -->
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>provider_id</label>
+                    <select name="provider_id" class="form-control">
+                      <option value="1">中国移动</option>
+                      <option value="2">中国联通</option>
+                      <option value="3">中国电信</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                      <label>tyep</label>
+                      <input class="form-control" name="type" placeholder="Enter type">
+                  </div>
+                  <div class="form-group">
+                    <label>分组</label>
+                    <select name="goods_class_id" class="form-control">
+                      #foreach($gc in $!gcs)
+                        <option value="$!gc.id">$!gc.className</option>
+                      #end
+                    </select>
+                  </div>
+                </div>
+                <!-- /.col-lg-6 (nested) -->
+              </div>
+              <div class="row">
+                <div class="col-lg-2 pull-right">
+                  <button type="submit" class="btn btn-default">Submit Button</button>
+                </div>
+              </div>
+            </form>
+            <!-- /.row (nested) -->
+          </div>
+          <!-- /.panel-body -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

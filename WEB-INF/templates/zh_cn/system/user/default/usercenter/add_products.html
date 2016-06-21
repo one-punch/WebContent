@@ -1,0 +1,39 @@
+#set($layout = "/WEB-INF/templates/layout/seller.html")
+
+<form action="$!webPath/seller/create_products.htm" method="post">
+  <div class="row">
+  	<div class="pull-right col-lg-2">
+      <button  class="btn btn-success" type="submit">增 加</button>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+              <th>#</th>
+              <th>产 品</th>
+              <th>价 格</th>
+              <th>运营商</th>
+              <th>接口提供商</th>
+          </tr>
+        </thead>
+        <tbody>
+          #foreach($goods in $goodsList)
+            <tr>
+                <td>
+                  <input type="checkbox" name="id" value="$!goods.id">
+                </td>
+                <td>$!goods.goods_name</td>
+                <td>$!goods.goods_price</td>
+                <td>$!goods.getProviderName()</td>
+                <td>$!goods.getTypeName()</td>
+            </tr>
+          #end
+        </tbody>
+      </table>
+    </div>
+      <!-- /.table-responsive -->
+  </div>
+</form>
